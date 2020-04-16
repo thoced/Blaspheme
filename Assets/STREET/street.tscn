@@ -37,6 +37,9 @@ data = PoolVector3Array( -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 
 
 [node name="street" instance=ExtResource( 1 )]
 
+[node name="Plane" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00269458, -0.00387526, 0.00246787 )
+
 [node name="StaticBody" type="StaticBody" parent="Plane" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Plane/StaticBody" index="0"]

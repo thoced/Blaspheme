@@ -35,6 +35,7 @@ height = 1.0
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.13593, 0 )
+visible = false
 navmesh = SubResource( 1 )
 
 [node name="zone" type="Spatial" parent="."]
@@ -48,8 +49,9 @@ timeToSearch = 1.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, 11.6674, 1.24356, -13.9731 )
-Maximum_Walk_Speed = 1.8
-Jump_Speed = 10
+Accelaration = 2.0
+Maximum_Sprint_Speed = 0.8
+Jump_Speed = 8.0
 
 [node name="AudioPas" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform( 1, 0, 4.47035e-08, 0, 0.553042, 0, -3.72529e-08, 0, 1, 0, 0, 0 )

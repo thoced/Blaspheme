@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://Scripts/MonsterScript.gd"
 }, {
 "base": "KinematicBody",
+"class": "MonsterSpecific",
+"language": "GDScript",
+"path": "res://Scripts/MonsterSpecific.gd"
+}, {
+"base": "KinematicBody",
 "class": "PlayerSpecific",
 "language": "GDScript",
 "path": "res://Scripts/PlayerSpecific.gd"
@@ -60,6 +65,7 @@ _global_script_class_icons={
 "HTerrainDataSaver": "",
 "Inventaire": "",
 "MonsterScript": "",
+"MonsterSpecific": "",
 "PlayerSpecific": "",
 "porteBase": "",
 "porteMaison": "",

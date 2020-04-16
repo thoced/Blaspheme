@@ -53,10 +53,6 @@ func getSimpleNavigationPath(newTargetPosition):
 		nextPoint = getNextPointPath()
 		onMove = true
 	
-	#for s in simplePaths:
-	#	createBall(s)
-	
-	
 
 func getNextPointPath():
 	indSimplePaths+=1
@@ -74,7 +70,6 @@ func _physics_process(delta):
 		else:
 			nextPoint = getNextPointPath()	
 			
-				
 	# deplacement
 	dir = Vector3.ZERO
 	if onMove:

@@ -42,7 +42,7 @@ navmesh = SubResource( 1 )
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.12363, 7.96462, -16.8006 )
 script = ExtResource( 2 )
-speed = 0.8
+speed = 1.2
 NavigationPath = NodePath("../Navigation")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]

@@ -17,7 +17,10 @@ func _process(delta):
 	if elapsedTime > timeToSearch:
 		elapsedTime = 0.0
 		if translation.distance_to(player.translation) < distanceViewPlayer:
-			if isPlayerVisible():
+			var diff = translation.direction_to(player.translation)
+			diff = diff.normalized()
+			var dot = transform.basis.z.dot(diff)
+			if dot > -0.15 and isPlayerVisible():
 				setTargetPosition(player.translation)
 		
 

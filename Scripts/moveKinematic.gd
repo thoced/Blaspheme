@@ -109,7 +109,7 @@ func _physics_process(delta):
 func setTargetPosition(position):
 	targetPosition = position
 	targetPosition.y += 1
-	createBall(position)
+	#createBall(position)
 	getSimpleNavigationPath(targetPosition)
 	
 func createBall(position):

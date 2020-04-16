@@ -44,7 +44,6 @@ func _input(event):
 			print("result: ", result.size())
 			if result.size() != 0 and monster != null:
 				monster.setTargetPosition(result["position"])
-				monster02.setTargetPosition(result["position"])
 
 func _on_action(value,value2,value3):
 	if value == $Player:

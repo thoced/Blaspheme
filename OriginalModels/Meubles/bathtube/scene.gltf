@@ -1,0 +1,353 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 7225,
+      "max": [
+        0.84999901056289673,
+        0.59999996423721313,
+        0.37501329183578491
+      ],
+      "min": [
+        -0.84999901056289673,
+        0.13499990105628967,
+        -0.37501323223114014
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 86700,
+      "componentType": 5126,
+      "count": 7225,
+      "max": [
+        1,
+        1,
+        0.99999082088470459
+      ],
+      "min": [
+        -1,
+        -0.99106681346893311,
+        -0.99999082088470459
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 7225,
+      "max": [
+        0.87500011920928955,
+        0.75000029802322388
+      ],
+      "min": [
+        0.75,
+        0.62761139869689941
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 27714,
+      "max": [
+        7224
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 173400,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        0.025999998673796654,
+        0.001999999862164259,
+        0.025999998673796654
+      ],
+      "min": [
+        -0.025999998673796654,
+        -0.009119989350438118,
+        -0.025999998673796654
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 181572,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        0.99447053670883179,
+        0.99985325336456299,
+        0.99447053670883179
+      ],
+      "min": [
+        -0.99447053670883179,
+        -0.97021245956420898,
+        -0.99447053670883179
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 57800,
+      "componentType": 5126,
+      "count": 681,
+      "max": [
+        1,
+        1
+      ],
+      "min": [
+        0,
+        0.014751335605978966
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 110856,
+      "componentType": 5125,
+      "count": 2484,
+      "max": [
+        680
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "marcin_malcherek (https://sketchfab.com/marcin_malcherek)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/bathtube-666e63fff4f24368aea922a38d574c25",
+      "title": "Bathtube"
+    },
+    "generator": "Sketchfab-8.12.1",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 120792,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63248,
+      "byteOffset": 120792,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 189744,
+      "byteOffset": 184040,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 373784,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "ceramic",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.80000000000000004,
+          0.80000000000000004,
+          0.80000000000000004,
+          1
+        ],
+        "metallicFactor": 0.11666700000000001,
+        "roughnessFactor": 0
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "chrome",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.30319800000000002,
+          0.30319800000000002,
+          0.30319800000000002,
+          1
+        ],
+        "metallicFactor": 0.65833299999999995,
+        "roughnessFactor": 0.108333
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        4,
+        6
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.2204460492503131e-16,
+        1,
+        0,
+        0,
+        -1,
+        2.2204460492503131e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        -0.99999999999994671,
+        0,
+        3.2584136988588439e-07,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -3.2584136988588439e-07,
+        0,
+        -0.99999999999994671,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "bathtube_1"
+    },
+    {
+      "mesh": 0,
+      "name": ""
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        -1.1363506317138066,
+        0,
+        3.7027004650833661e-07,
+        0,
+        0,
+        1.1363506317138672,
+        0,
+        0,
+        -3.7027004650833661e-07,
+        0,
+        -1.1363506317138066,
+        0,
+        0,
+        0.14509543776512146,
+        -0.10282982140779495,
+        1
+      ],
+      "name": "plug_2"
+    },
+    {
+      "mesh": 1,
+      "name": ""
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
+

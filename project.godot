@@ -1,0 +1,87 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "BaseClass",
+"language": "GDScript",
+"path": "res://Scripts/base.gd"
+}, {
+"base": "ResourceFormatLoader",
+"class": "HTerrainDataLoader",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
+}, {
+"base": "ResourceFormatSaver",
+"class": "HTerrainDataSaver",
+"language": "GDScript",
+"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
+}, {
+"base": "Node",
+"class": "Inventaire",
+"language": "GDScript",
+"path": "res://Scripts/Inventaire.gd"
+}, {
+"base": "Node",
+"class": "MonsterScript",
+"language": "GDScript",
+"path": "res://Scripts/MonsterScript.gd"
+}, {
+"base": "KinematicBody",
+"class": "PlayerSpecific",
+"language": "GDScript",
+"path": "res://Scripts/PlayerSpecific.gd"
+}, {
+"base": "Spatial",
+"class": "porteBase",
+"language": "GDScript",
+"path": "res://Scripts/porteBase.gd"
+}, {
+"base": "Spatial",
+"class": "porteMaison",
+"language": "GDScript",
+"path": "res://Scripts/porteMaison.gd"
+}, {
+"base": "Spatial",
+"class": "porteSDB",
+"language": "GDScript",
+"path": "res://Scripts/porteSDB.gd"
+} ]
+_global_script_class_icons={
+"BaseClass": "",
+"HTerrainDataLoader": "",
+"HTerrainDataSaver": "",
+"Inventaire": "",
+"MonsterScript": "",
+"PlayerSpecific": "",
+"porteBase": "",
+"porteMaison": "",
+"porteSDB": ""
+}
+
+[application]
+
+config/name="Blaspheme"
+run/main_scene="res://Scenes/Spatial.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "zylann.hterrain" )
+
+[rendering]
+
+quality/shadow_atlas/size=8192
+quality/shadow_atlas/quadrant_0_subdiv=2
+quality/shadow_atlas/quadrant_1_subdiv=3
+quality/shadow_atlas/quadrant_2_subdiv=4
+quality/shadow_atlas/quadrant_3_subdiv=5
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://default_env.tres"

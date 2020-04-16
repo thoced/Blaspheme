@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://OriginalModels/Meubles/old_desk_lamp/scene.gltf" type="PackedScene" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0.929412, 0.92549, 0.627451, 1 )
+emission_enabled = true
+emission = Color( 1, 1, 0.952941, 1 )
+emission_energy = 16.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="old_lampe" instance=ExtResource( 1 )]
+
+[node name="defaultMaterial" parent="RootNode gltf orientation matrix/RootNode model correction matrix/Collada visual scene group/Sphere004" index="0"]
+use_in_baked_light = true
+
+[node name="MeshInstance" type="MeshInstance" parent="RootNode gltf orientation matrix/RootNode model correction matrix/Collada visual scene group/Sphere004" index="1"]
+transform = Transform( 0.106623, 0, 0, 0, 0.078774, 0, 0, 0, 0.0844068, 0.390077, 0.791112, 0.083506 )
+use_in_baked_light = true
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="RootNode gltf orientation matrix/RootNode model correction matrix/Collada visual scene group/Sphere004/MeshInstance" index="0"]
+transform = Transform( 9.37881, 0, 0, 0, 0.512498, 12.6842, 0, -11.8377, 0.478297, 0, 0, 0 )
+light_color = Color( 0.929412, 0.843137, 0.752941, 1 )
+light_energy = 4.62
+shadow_enabled = true
+spot_angle = 82.3
+spot_angle_attenuation = 1.86607

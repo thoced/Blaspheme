@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cuisine.obj-95d7890f8b0abfcb55e06e400a8d3d17.mesh"
+
+[deps]
+
+files=[ "res://.import/cuisine.obj-95d7890f8b0abfcb55e06e400a8d3d17.mesh" ]
+
+source_file="res://OriginalModels/loft01/cuisine.obj"
+dest_files=[ "res://.import/cuisine.obj-95d7890f8b0abfcb55e06e400a8d3d17.mesh", "res://.import/cuisine.obj-95d7890f8b0abfcb55e06e400a8d3d17.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

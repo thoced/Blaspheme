@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://OriginalModels/Meubles/table01/scene.gltf" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.97626, 2.05553, 1.59661 )
+
+[node name="table01" instance=ExtResource( 1 )]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.553982, -0.551481, 0.118687 )
+
+[node name="Cube_Material_0" parent="RootNode gltf orientation matrix/RootNode model correction matrix/3f6e449b912141d592d4f7b029cd94ddfbx/RootNode/Cube" index="0"]
+use_in_baked_light = true
+
+[node name="StaticBody" type="StaticBody" parent="RootNode gltf orientation matrix/RootNode model correction matrix/3f6e449b912141d592d4f7b029cd94ddfbx/RootNode/Cube/Cube_Material_0" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RootNode gltf orientation matrix/RootNode model correction matrix/3f6e449b912141d592d4f7b029cd94ddfbx/RootNode/Cube/Cube_Material_0/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 8.52651e-14, 0, -8.52651e-14, 1, 0, 2.23517e-08, -1.3786 )
+shape = SubResource( 1 )

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/embrasure.obj-76d26b75fa99adb59422ea7f2c1a299f.mesh"
+
+[deps]
+
+files=[ "res://.import/embrasure.obj-76d26b75fa99adb59422ea7f2c1a299f.mesh" ]
+
+source_file="res://OriginalModels/loft01/embrasure.obj"
+dest_files=[ "res://.import/embrasure.obj-76d26b75fa99adb59422ea7f2c1a299f.mesh", "res://.import/embrasure.obj-76d26b75fa99adb59422ea7f2c1a299f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

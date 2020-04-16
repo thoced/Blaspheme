@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://OriginalModels/Meubles/tv_cabinet/scene.gltf" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 5.36628, 1.15866, 1.19362 )
+
+[node name="tvmeuble" instance=ExtResource( 1 )]
+
+[node name="Mesh" parent="RootNode gltf orientation matrix/RootNode model correction matrix/modelloobjcleanermaterialmergergles" index="0"]
+use_in_baked_light = true
+
+[node name="StaticBody" type="StaticBody" parent="RootNode gltf orientation matrix/RootNode model correction matrix/modelloobjcleanermaterialmergergles/Mesh" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="RootNode gltf orientation matrix/RootNode model correction matrix/modelloobjcleanermaterialmergergles/Mesh/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.29413 )
+shape = SubResource( 1 )

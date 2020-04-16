@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/oiseau.ogg-731bd3b763bc649440c5f88ccd7d74b8.oggstr"
+
+[deps]
+
+source_file="res://Sons/oiseau.ogg"
+dest_files=[ "res://.import/oiseau.ogg-731bd3b763bc649440c5f88ccd7d74b8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

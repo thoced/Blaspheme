@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/loft01.obj-33f94e7232371547abdb0260bf74d140.mesh"
+
+[deps]
+
+files=[ "res://.import/loft01.obj-33f94e7232371547abdb0260bf74d140.mesh" ]
+
+source_file="res://OriginalModels/loft01/loft01.obj"
+dest_files=[ "res://.import/loft01.obj-33f94e7232371547abdb0260bf74d140.mesh", "res://.import/loft01.obj-33f94e7232371547abdb0260bf74d140.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

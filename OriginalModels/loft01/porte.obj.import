@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/porte.obj-7d668edc6e4a95854caa1b3de3efe597.mesh"
+
+[deps]
+
+files=[ "res://.import/porte.obj-7d668edc6e4a95854caa1b3de3efe597.mesh" ]
+
+source_file="res://OriginalModels/loft01/porte.obj"
+dest_files=[ "res://.import/porte.obj-7d668edc6e4a95854caa1b3de3efe597.mesh", "res://.import/porte.obj-7d668edc6e4a95854caa1b3de3efe597.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

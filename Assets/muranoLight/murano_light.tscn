@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://OriginalModels/Meubles/murano_light/scene.gltf" type="PackedScene" id=1]
+
+[node name="murano_light" instance=ExtResource( 1 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+
+[node name="Rectangle597_Crystal_Clear_bump_0" parent="RootNode gltf orientation matrix/RootNode model correction matrix/570efb99b0c549d284391018d20d3b90fbx/RootNode/Rectangle597" index="0"]
+use_in_baked_light = true

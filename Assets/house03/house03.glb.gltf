@@ -1,0 +1,587 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.0.5",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "house03",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.10000002384185791,
+                0.10000002384185791,
+                0.10000002384185791
+            ],
+            "translation" : [
+                -114.14838409423828,
+                6.006153583526611,
+                -44.27288055419922
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "sol03",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.10000002384185791,
+                0.10000002384185791,
+                0.10000002384185791
+            ],
+            "translation" : [
+                -113.96468353271484,
+                6.006153583526611,
+                -44.270877838134766
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "hallMat",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9666666388511658
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "solMat",
+            "normalTexture" : {
+                "index" : 1,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "metallicRoughnessTexture" : {
+                    "index" : 3,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "house03",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "JOINTS_0" : 3,
+                        "WEIGHTS_0" : 4
+                    },
+                    "indices" : 5,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 6,
+                        "NORMAL" : 7,
+                        "TEXCOORD_0" : 8,
+                        "JOINTS_0" : 9,
+                        "WEIGHTS_0" : 10
+                    },
+                    "indices" : 11
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14,
+                        "JOINTS_0" : 15,
+                        "WEIGHTS_0" : 16
+                    },
+                    "indices" : 17
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 18,
+                        "NORMAL" : 19,
+                        "TEXCOORD_0" : 20,
+                        "JOINTS_0" : 21,
+                        "WEIGHTS_0" : 22
+                    },
+                    "indices" : 23
+                }
+            ]
+        },
+        {
+            "name" : "sol03.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 24,
+                        "NORMAL" : 25,
+                        "TEXCOORD_0" : 26
+                    },
+                    "indices" : 27,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 3
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "TexturesCom_WallpaperForties0041_seamless_S",
+            "uri" : "TexturesCom_WallpaperForties0041_seamless_S.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_MarbleFloorTiles2_1024_normal",
+            "uri" : "TexturesCom_MarbleFloorTiles2_1024_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_MarbleFloorTiles2_1024_diffuse",
+            "uri" : "TexturesCom_MarbleFloorTiles2_1024_diffuse.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_MarbleFloorTiles2_1024_roughness",
+            "uri" : "TexturesCom_MarbleFloorTiles2_1024_roughness.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 47,
+            "max" : [
+                1418.008056640625,
+                592.4225463867188,
+                12.157769203186035
+            ],
+            "min" : [
+                793.9545288085938,
+                -12.53173828125,
+                -250
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 47,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 47,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 47,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 47,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 69,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 1402,
+            "max" : [
+                2008.95458984375,
+                1204.46826171875,
+                12.157769203186035
+            ],
+            "min" : [
+                -9.04549789428711,
+                -12.53173828125,
+                -250
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 1402,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1402,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 1402,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 1402,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 2943,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 1301,
+            "max" : [
+                1934.272705078125,
+                1204.9569091796875,
+                0
+            ],
+            "min" : [
+                429.68170166015625,
+                51.01368713378906,
+                -208.5
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 1301,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 1301,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 1301,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 1301,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5123,
+            "count" : 3063,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 504,
+            "max" : [
+                1061.814453125,
+                1205.3353271484375,
+                -99.0679702758789
+            ],
+            "min" : [
+                1047.728759765625,
+                1178.2679443359375,
+                -101.44575500488281
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5126,
+            "count" : 504,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 20,
+            "componentType" : 5126,
+            "count" : 504,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 21,
+            "componentType" : 5123,
+            "count" : 504,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 22,
+            "componentType" : 5126,
+            "count" : 504,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 23,
+            "componentType" : 5123,
+            "count" : 2760,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 24,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                1993.95458984375,
+                1205.357666015625,
+                1.2313621482462622e-06
+            ],
+            "min" : [
+                -10.161591529846191,
+                -6.089785099029541,
+                -3.0784053706156556e-07
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 25,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 26,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 27,
+            "componentType" : 5123,
+            "count" : 6,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 564,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 564,
+            "byteOffset" : 564
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 376,
+            "byteOffset" : 1128
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 376,
+            "byteOffset" : 1504
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 752,
+            "byteOffset" : 1880
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 138,
+            "byteOffset" : 2632
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16824,
+            "byteOffset" : 2772
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16824,
+            "byteOffset" : 19596
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11216,
+            "byteOffset" : 36420
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11216,
+            "byteOffset" : 47636
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 22432,
+            "byteOffset" : 58852
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5886,
+            "byteOffset" : 81284
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15612,
+            "byteOffset" : 87172
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15612,
+            "byteOffset" : 102784
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10408,
+            "byteOffset" : 118396
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10408,
+            "byteOffset" : 128804
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 20816,
+            "byteOffset" : 139212
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6126,
+            "byteOffset" : 160028
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6048,
+            "byteOffset" : 166156
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6048,
+            "byteOffset" : 172204
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4032,
+            "byteOffset" : 178252
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4032,
+            "byteOffset" : 182284
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8064,
+            "byteOffset" : 186316
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5520,
+            "byteOffset" : 194380
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 199900
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 199948
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32,
+            "byteOffset" : 199996
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 200028
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 200040,
+            "uri" : "house03.glb.bin"
+        }
+    ]
+}

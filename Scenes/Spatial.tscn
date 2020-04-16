@@ -40,13 +40,14 @@ navmesh = SubResource( 1 )
 [node name="zone" type="Spatial" parent="."]
 
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.12363, 7.96462, -16.8006 )
+transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.12363, 1.2405, -8.87514 )
 script = ExtResource( 2 )
 speed = 1.2
 NavigationPath = NodePath("../Navigation")
+timeToSearch = 1.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, 3.06196, 12.2405, -19.2522 )
+transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, 11.6674, 1.24356, -13.9731 )
 Maximum_Walk_Speed = 1.8
 Jump_Speed = 10
 

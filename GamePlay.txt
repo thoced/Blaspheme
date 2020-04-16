@@ -1,0 +1,19 @@
+
+1 map entourée d'un fossé et d'un brouillard
+
+1 une seule sortie via un pont levis
+
+la map contient une ville composée de plusieurs batiments visitables
+
+l'objectif :
+
+	- activer le courant qui alimente le pont
+		- retrouver la clé qui ouvre groupe electrique
+
+	- retrouver la clé qui ouvre l'accès aux commandes du pont
+
+	- retrouver les enfants perdus
+
+	- ramener les enfants perdus une zone
+	
+	- eviter le monstre en courant ou en se cachant

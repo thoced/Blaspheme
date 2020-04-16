@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/STREET/street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/MonsterSpecific.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/ToBeDropped.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/pick.gd" type="Script" id=5]
 [ext_resource path="res://Assets/monster02/MonsterFull.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/moveKinematic.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/Script_control_monster.gd" type="Script" id=36]
 
 [sub_resource type="NavigationMesh" id=1]
@@ -41,13 +41,7 @@ navmesh = SubResource( 1 )
 
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.12363, 7.96462, -16.8006 )
-script = ExtResource( 10 )
-speed = 0.8
-NavigationPath = NodePath("../Navigation")
-
-[node name="MonsterFull2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.86163, 7.38741, -5.78795 )
-script = ExtResource( 10 )
+script = ExtResource( 2 )
 speed = 0.8
 NavigationPath = NodePath("../Navigation")
 

@@ -45,7 +45,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func getSimpleNavigationPath(newTargetPosition):
 	simplePaths.empty()
-	print("translation: " , translation)
 	print("newTargetPosition: " , newTargetPosition)
 	simplePaths = NavigationNode.get_simple_path(translation,newTargetPosition)
 	indSimplePaths = -1

@@ -15,21 +15,12 @@ func _ready():
 	camera = get_node("/root/Spatial/Player/NodeCamera/Camera")
 	monster = get_node("/root/Spatial/MonsterFull")
 	monster02 = get_node("/root/Spatial/MonsterFull2")
-	OS.window_size = Vector2(1920,1080)
-	OS.window_fullscreen = true
-	createBall(Vector3(0,0,0))
+	OS.window_size = Vector2(1024,768)
+	OS.window_fullscreen = false
+	
 	
 func _process(delta):
-	var ray_lenght = 1000
-	var mouse_pos = get_viewport().get_mouse_position()
-	print(mouse_pos)
-	var from = camera.project_ray_origin(mouse_pos)
-	var to = camera.project_ray_normal(mouse_pos) * ray_lenght
-	var space_state = get_world().direct_space_state
-	var result = space_state.intersect_ray(from,to)
-	if result != null:
-		if result.size() != 0:
-			ball.translation = result["position"]
+	pass
 
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed():

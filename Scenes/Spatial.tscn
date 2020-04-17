@@ -114,7 +114,6 @@ PathPatrouille = NodePath("../NodePatrouille")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, 11.6674, 1.24356, -13.9731 )
-Accelaration = 2.0
 Maximum_Sprint_Speed = 0.8
 Jump_Speed = 2.0
 

@@ -23,4 +23,6 @@ func _input(event):
 			return
 		if INVERSION_MULT * SENSITIVITY_Y * event.relative.y <= 0  and self.rotation_degrees.x <= -MAX_Y:
 			return
-		$Camera.rotate_x(INVERSION_MULT * SENSITIVITY_Y * event.relative.y)
+		$NodeCamera/Camera.rotate_x(INVERSION_MULT * SENSITIVITY_Y * event.relative.y)
+		
+		

@@ -25,7 +25,12 @@ var positionUp
 var bananeCenter
 var bananeLeft
 var bananeRight
+var nodeCameraZero
+var deg = 0.0
+var amplitude = 0.6
+var speedDeg = 12
 var onMove = false
+
 
 
 
@@ -35,12 +40,16 @@ func _ready():
 	forward_velocity = Walk_Speed
 	set_process(true)
 	
-	positionUp = $NodeCamera.transform.origin
-	positionDown = $NodeCamera.transform.origin + Vector3(0,-0.5,0)
+	positionUp = $PivotCamera.transform.origin
+	positionDown = $PivotCamera.transform.origin + Vector3(0,-0.5,0)
 	
-	bananeCenter = $NodeCamera.transform.basis
-	bananeLeft = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
-	bananeRight = $NodeCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(15.0))
+	bananeCenter = $PivotCamera.transform.basis
+	bananeLeft = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
+	bananeRight = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(15.0))
+	
+	nodeCameraZero = $PivotCamera/NodeCamera.transform.basis
+	
+	
 	
 	
 func _process(delta):
@@ -60,6 +69,7 @@ func _physics_process(delta):
 		velocity.x = -global_transform.basis.z.x * Walk_Speed
 		velocity.z = -global_transform.basis.z.z * Walk_Speed
 		onMove = true
+		deg += delta * speedDeg
 		
 		
 	if Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN):
@@ -69,6 +79,7 @@ func _physics_process(delta):
 		velocity.x = global_transform.basis.z.x * Walk_Speed
 		velocity.z = global_transform.basis.z.z * Walk_Speed
 		onMove = true
+		deg -= delta * speedDeg
 		
 	if Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_Q):
 		Walk_Speed += Accelaration * delta
@@ -104,24 +115,31 @@ func _physics_process(delta):
 	
 	#crounch
 	if crounch:
-		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionDown,0.1)
-		$NodeCamera.transform.origin = vNew
+		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionDown,0.1)
+		$PivotCamera.transform.origin = vNew
 	else:
-		var vNew = $NodeCamera.transform.origin.linear_interpolate(positionUp,0.1)
-		$NodeCamera.transform.origin = vNew
+		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionUp,0.1)
+		$PivotCamera.transform.origin = vNew
 		
 	#banane
 	if bananeRotLeft:
-		var vNew = $NodeCamera.transform.basis.slerp(bananeLeft,0.1)
-		$NodeCamera.transform.basis = vNew
+		var vNew = $PivotCamera.transform.basis.slerp(bananeLeft,0.1)
+		$PivotCamera.transform.basis = vNew
 	if bananeRotRight:
-		var vNew = $NodeCamera.transform.basis.slerp(bananeRight,0.1)
-		$NodeCamera.transform.basis = vNew
+		var vNew = $PivotCamera.transform.basis.slerp(bananeRight,0.1)
+		$PivotCamera.transform.basis = vNew
 	elif not(bananeRotLeft or bananeRotRight):
-		var vNew = $NodeCamera.transform.basis.slerp(bananeCenter,0.1)
-		$NodeCamera.transform.basis = vNew
+		var vNew = $PivotCamera.transform.basis.slerp(bananeCenter,0.1)
+		$PivotCamera.transform.basis = vNew
 		
-		
+	# mouvement de roll en deplacement
+	
+	var roll = nodeCameraZero.rotated(Vector3.RIGHT,deg2rad(sin(deg) * amplitude))
+	roll = roll.rotated(Vector3.UP,deg2rad(sin(deg * 0.5) * amplitude))
+	$PivotCamera/NodeCamera.transform.basis = roll
+	
+
+	
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-Sensitivity_X * event.relative.x)

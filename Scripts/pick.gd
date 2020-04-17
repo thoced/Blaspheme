@@ -15,8 +15,8 @@ func _ready():
 	camera = get_node("/root/Spatial/Player/NodeCamera/Camera")
 	monster = get_node("/root/Spatial/MonsterFull")
 	monster02 = get_node("/root/Spatial/MonsterFull2")
-	OS.window_size = Vector2(1024,768)
-	OS.window_fullscreen = false
+	OS.window_size = Vector2(1920,1080)
+	OS.window_fullscreen = true
 	
 	
 func _process(delta):

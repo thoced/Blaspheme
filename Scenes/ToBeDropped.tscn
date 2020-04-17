@@ -10,22 +10,22 @@ height = 1.8
 script = ExtResource( 1 )
 Sensitivity_X = 0.001
 Sensitivity_Y = 0.001
-Accelaration = 1
-Jump_Speed = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, -8.74228e-09, -0.4, 0, 0.2, -1.74846e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="NodeCamera" type="Spatial" parent="."]
+[node name="PivotCamera" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.476408, 0 )
 script = ExtResource( 2 )
 
-[node name="Camera" type="Camera" parent="NodeCamera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01394, 0 )
+[node name="NodeCamera" type="Spatial" parent="PivotCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966172, 0 )
+
+[node name="Camera" type="Camera" parent="PivotCamera/NodeCamera"]
 current = true
 
-[node name="SpotLight" type="SpotLight" parent="NodeCamera/Camera"]
+[node name="SpotLight" type="SpotLight" parent="PivotCamera/NodeCamera/Camera"]
 visible = false
 light_color = Color( 0.956863, 0.929412, 0.717647, 1 )
 light_energy = 1.34

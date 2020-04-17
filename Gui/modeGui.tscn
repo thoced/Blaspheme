@@ -18,3 +18,11 @@ margin_bottom = 37.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="distance" type="Label" parent="."]
+margin_top = 37.0
+margin_right = 40.0
+margin_bottom = 51.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

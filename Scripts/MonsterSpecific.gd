@@ -4,8 +4,10 @@ class_name MonsterSpecific
 
 # info recherche
 export var distanceViewPlayer:float = 24.0
+export var distanceClosestPlayer:float = 2.0
 export var timeToSearch:float = 2.0
 var player
+var distance = 0.0
 var elapsedTime = 0.0
 var elapsedTimeChasse = 0.0
 var elapsedTimeIdle = 0.0
@@ -21,6 +23,7 @@ var mode = "PATROUILLE"
 #variable DEBUG
 var modeGUI
 var positionGUI
+var distanceGUI
 
 func _ready():
 	player = get_node("/root/Spatial/Player")
@@ -34,6 +37,7 @@ func _ready():
 	#debug
 	modeGUI = get_node("/root/Spatial/modeGui/mode")
 	positionGUI = get_node("/root/Spatial/modeGui/newPosition")
+	distanceGUI = get_node("/root/Spatial/modeGui/distance")
 	
 func _process(delta):
 	elapsedTime += delta
@@ -56,26 +60,37 @@ func _process(delta):
 			
 		_:patrouille()
 		
+	# DEBUG
 	modeGUI.text = "mode: " + mode
 	positionGUI.text = "position: " + String(nextPositionPatrouille)
-	
+	distanceGUI.text = "distance: " + String(distance)
 		
 func ia(delta):
-		if translation.distance_to(player.translation) < distanceViewPlayer:
-			var diff = translation.direction_to(player.translation)
-			diff = diff.normalized()
-			var dot = transform.basis.z.dot(diff)
-			if dot > -0.15 and isPlayerVisible():
-				mode = "CHASSE"
+	# calcul de la distance entre le monstre et le joueur
+	distance = translation.distance_to(player.translation)
+	# si la distance est inférieur à distanceClosestPlayer et que le joueur est visible
+	# (evite que le joueur qui tourne autour du monstre le rend invisible une fois derrière)
+	if distance < distanceClosestPlayer and isPlayerVisible():
+		mode = "CHASSE"
+		elapsedTimeChasse = 0.0
+		nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
+		return
+	# si la distance est inférieur à distanceView Player
+	if distance < distanceViewPlayer:
+		var diff = translation.direction_to(player.translation)
+		diff = diff.normalized()
+		var dot = transform.basis.z.dot(diff)
+		if dot > -0.15 and isPlayerVisible():
+			mode = "CHASSE"
+			elapsedTimeChasse = 0.0
+			nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
+		else:
+			if elapsedTimeChasse > 20.0: # après 20 secondes où le joueur est perdu, le monstre retourne en mode patrouille
+				mode = "PATROUILLE"
 				elapsedTimeChasse = 0.0
-				nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
-			else:
-				if elapsedTimeChasse > 20.0:
-					mode = "PATROUILLE"
-					elapsedTimeChasse = 0.0
-				elif mode == "CHASSE":
-					# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
-					mode = "SEEKHIDE"
+			elif mode == "CHASSE": # avant les 20 secondes, le monstre est mode recherche du joueur caché
+				# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
+				mode = "SEEKHIDE"
 	
 func idle():
 	if elapsedTimeIdle > 2.0:

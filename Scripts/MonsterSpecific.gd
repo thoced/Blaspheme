@@ -18,6 +18,10 @@ var random:RandomNumberGenerator
 var nextPositionPatrouille:Vector3
 var mode = "PATROUILLE"  
 
+#variable DEBUG
+var modeGUI
+var positionGUI
+
 func _ready():
 	player = get_node("/root/Spatial/Player")
 	nodePatrouille = get_node(PathPatrouille)
@@ -26,6 +30,10 @@ func _ready():
 	var i  = random.randi_range(0,nbPositionPatrouille - 1)
 	nextPositionPatrouille = nodePatrouille.get_child(i).translation
 	setTargetPosition(nextPositionPatrouille)
+	
+	#debug
+	modeGUI = get_node("/root/Spatial/modeGui/mode")
+	positionGUI = get_node("/root/Spatial/modeGui/newPosition")
 	
 func _process(delta):
 	elapsedTime += delta
@@ -48,7 +56,9 @@ func _process(delta):
 			
 		_:patrouille()
 		
-	print("mode: ",mode, " elapsed: ",elapsedTimeChasse)
+	modeGUI.text = "mode: " + mode
+	positionGUI.text = "position: " + String(nextPositionPatrouille)
+	
 		
 func ia(delta):
 		if translation.distance_to(player.translation) < distanceViewPlayer:

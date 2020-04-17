@@ -105,7 +105,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7045, 0.846807, -6.99737 )
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 2.12363, 1.2405, -8.87514 )
 script = ExtResource( 2 )
-speed = 1.2
+speedWalk = 1.2
+speedSprint = 1.8
 NavigationPath = NodePath("../Navigation")
 distanceViewPlayer = 20.0
 timeToSearch = 1.0

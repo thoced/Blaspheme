@@ -4,7 +4,9 @@ extends KinematicBody
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var speed:float = 12
+var speed:float = 12.0
+export var speedWalk = 12.0
+export var speedSprint:float = 12.0
 export var gravity:float = -9.81  
 export var close = 0.5
 var vectorGravity = Vector3(0,gravity,0)
@@ -38,6 +40,7 @@ func _ready():
 	simplePaths.empty()
 	nextPoint = translation
 	set_physics_process(true)
+	speed = speedWalk
 	
 	
 func _on_AnimationPlayer_animation_finished(anim_name):

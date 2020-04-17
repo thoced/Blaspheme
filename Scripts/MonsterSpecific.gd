@@ -24,6 +24,7 @@ var mode = "PATROUILLE"
 var modeGUI
 var positionGUI
 var distanceGUI
+var speedGUI
 
 func _ready():
 	player = get_node("/root/Spatial/Player")
@@ -38,6 +39,7 @@ func _ready():
 	modeGUI = get_node("/root/Spatial/modeGui/mode")
 	positionGUI = get_node("/root/Spatial/modeGui/newPosition")
 	distanceGUI = get_node("/root/Spatial/modeGui/distance")
+	speedGUI = get_node("/root/Spatial/modeGui/speed")
 	
 func _process(delta):
 	elapsedTime += delta
@@ -64,6 +66,7 @@ func _process(delta):
 	modeGUI.text = "mode: " + mode
 	positionGUI.text = "position: " + String(nextPositionPatrouille)
 	distanceGUI.text = "distance: " + String(distance)
+	speedGUI.text = "speed: " + String(speed)
 		
 func ia(delta):
 	# calcul de la distance entre le monstre et le joueur
@@ -71,7 +74,7 @@ func ia(delta):
 	# si la distance est inférieur à distanceClosestPlayer et que le joueur est visible
 	# (evite que le joueur qui tourne autour du monstre le rend invisible une fois derrière)
 	if distance < distanceClosestPlayer and isPlayerVisible():
-		mode = "CHASSE"
+		setMode("CHASSE")
 		elapsedTimeChasse = 0.0
 		nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
 		return
@@ -81,20 +84,20 @@ func ia(delta):
 		diff = diff.normalized()
 		var dot = transform.basis.z.dot(diff)
 		if dot > -0.15 and isPlayerVisible():
-			mode = "CHASSE"
+			setMode("CHASSE")
 			elapsedTimeChasse = 0.0
 			nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
 		else:
 			if elapsedTimeChasse > 20.0: # après 20 secondes où le joueur est perdu, le monstre retourne en mode patrouille
-				mode = "PATROUILLE"
+				setMode("PATROUILLE")
 				elapsedTimeChasse = 0.0
 			elif mode == "CHASSE": # avant les 20 secondes, le monstre est mode recherche du joueur caché
 				# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
-				mode = "SEEKHIDE"
+				setMode("SEEKHIDE")
 	
 func idle():
 	if elapsedTimeIdle > 2.0:
-		mode = "PATROUILLE"
+		setMode("PATROUILLE")
 		elapsedTimeIdle = 0.0
 					
 func seekhide():
@@ -116,11 +119,11 @@ func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:
 		var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
 		nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
-		mode = "IDLE"
+		setMode("IDLE")
 		elapsedTimeIdle = 0.0
 	
 	setTargetPosition(nextPositionPatrouille)
-	
+
 	
 func isPlayerVisible():
 	var ray_lenght = 1000
@@ -133,4 +136,15 @@ func isPlayerVisible():
 		return true
 	else:
 		return false
-		 
+		
+func setMode(m):
+	mode = m 
+	match mode:
+		"IDLE": speed = speedWalk
+		"PATROUILLE": speed = speedWalk
+		"CHASSE": speed = speedSprint
+		"SEEKHIDE": speed = speedWalk
+		_: speed = speedWalk
+		
+	# modification de la vitesse d'animation en fonction de la vitesse
+	$AnimationTree.set("parameters/TuleScale/scale", speed)

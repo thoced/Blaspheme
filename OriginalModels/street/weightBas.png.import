@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/albedoBase.png-6d3b008b8a98ea2095a3abcac287908c.s3tc.stex"
-path.etc2="res://.import/albedoBase.png-6d3b008b8a98ea2095a3abcac287908c.etc2.stex"
+path.s3tc="res://.import/weightBas.png-11bea33d06599448df3115c07cf95ab1.s3tc.stex"
+path.etc2="res://.import/weightBas.png-11bea33d06599448df3115c07cf95ab1.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/albedoBase.png"
-dest_files=[ "res://.import/albedoBase.png-6d3b008b8a98ea2095a3abcac287908c.s3tc.stex", "res://.import/albedoBase.png-6d3b008b8a98ea2095a3abcac287908c.etc2.stex" ]
+source_file="res://OriginalModels/street/weightBas.png"
+dest_files=[ "res://.import/weightBas.png-11bea33d06599448df3115c07cf95ab1.s3tc.stex", "res://.import/weightBas.png-11bea33d06599448df3115c07cf95ab1.etc2.stex" ]
 
 [params]
 

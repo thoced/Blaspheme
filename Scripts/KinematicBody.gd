@@ -32,9 +32,6 @@ var speedDeg = 12
 var onMove = false
 
 
-
-
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	forward_velocity = Walk_Speed

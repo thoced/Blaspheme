@@ -70,7 +70,8 @@ func _process(delta):
 		
 func ia(delta):
 	# calcul de la distance entre le monstre et le joueur
-	distance = translation.distance_to(player.translation)
+	distance = to_global($head.translation).distance_to(player.translation)
+			  
 	# si la distance est inférieur à distanceClosestPlayer et que le joueur est visible
 	# (evite que le joueur qui tourne autour du monstre le rend invisible une fois derrière)
 	if distance < distanceClosestPlayer and isPlayerVisible():
@@ -80,7 +81,7 @@ func ia(delta):
 		return
 	# si la distance est inférieur à distanceView Player
 	if distance < distanceViewPlayer:
-		var diff = translation.direction_to(player.translation)
+		var diff = to_global($head.translation).direction_to(player.translation)
 		diff = diff.normalized()
 		var dot = transform.basis.z.dot(diff)
 		if dot > -0.15 and isPlayerVisible():
@@ -90,10 +91,6 @@ func ia(delta):
 		else:
 			if elapsedTimeChasse > 20.0: # après 20 secondes où le joueur est perdu, le monstre retourne en mode patrouille
 				setMode("PATROUILLE")
-				# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-				#var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
-				#nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
-				#elapsedTimeChasse = 0.0
 			elif mode == "CHASSE": # avant les 20 secondes, le monstre est mode recherche du joueur caché
 				# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
 				setMode("SEEKHIDE")
@@ -120,7 +117,7 @@ func seekhide():
 	
 func chasse():
 	setTargetPosition(nextPositionPatrouille)
-		
+	
 func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:
 		var indRandom = random.randi_range(0,nbPositionPatrouille - 1)

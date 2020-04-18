@@ -6,64 +6,37 @@
     "scene" : 0,
     "scenes" : [
         {
+            "extras" : {
+                "glTF2ExportSettings" : {
+                    "export_apply" : 1,
+                    "export_extras" : 1,
+                    "export_format" : "GLTF_SEPARATE",
+                    "export_selected" : 1
+                }
+            },
             "name" : "Scene",
             "nodes" : [
-                0,
-                1,
-                2
+                0
             ]
         }
     ],
     "nodes" : [
         {
-            "name" : "Light",
-            "rotation" : [
-                0.16907575726509094,
-                0.7558803558349609,
-                -0.27217137813568115,
-                0.570947527885437
-            ],
-            "translation" : [
-                4.076245307922363,
-                5.903861999511719,
-                -1.0054539442062378
-            ]
-        },
-        {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.358891487121582,
-                4.958309173583984,
-                6.925790786743164
-            ]
-        },
-        {
             "mesh" : 0,
-            "name" : "Plane",
-            "translation" : [
-                -0.01590581052005291,
-                -0.002375316806137562,
-                -0.00835492741316557
-            ]
+            "name" : "Plane"
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "terrain",
+            "name" : "terrainDetailShading",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
-                    "texCoord" : 1
+                    "texCoord" : 0
                 },
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.9090908765792847
+                "roughnessFactor" : 1
             }
         }
     ],
@@ -92,82 +65,82 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "Detail",
-            "uri" : "Detail.png"
+            "name" : "albedoBase",
+            "uri" : "albedoBase.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 18821,
+            "count" : 7921,
             "max" : [
-                10.000001907348633,
-                1.588889479637146,
-                10.000001907348633
+                155.9298858642578,
+                25.06340217590332,
+                152.00425720214844
             ],
             "min" : [
-                -10.000001907348633,
-                -1.4111117124557495,
-                -10.000001907348633
+                -150.8498077392578,
+                -48.262298583984375,
+                -153.1328125
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 18821,
+            "count" : 7921,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 18821,
+            "count" : 7921,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 18821,
+            "count" : 7921,
             "type" : "VEC2"
         },
         {
             "bufferView" : 4,
             "componentType" : 5123,
-            "count" : 98304,
+            "count" : 46464,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 225852,
+            "byteLength" : 95052,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 225852,
-            "byteOffset" : 225852
+            "byteLength" : 95052,
+            "byteOffset" : 95052
         },
         {
             "buffer" : 0,
-            "byteLength" : 150568,
-            "byteOffset" : 451704
+            "byteLength" : 63368,
+            "byteOffset" : 190104
         },
         {
             "buffer" : 0,
-            "byteLength" : 150568,
-            "byteOffset" : 602272
+            "byteLength" : 63368,
+            "byteOffset" : 253472
         },
         {
             "buffer" : 0,
-            "byteLength" : 196608,
-            "byteOffset" : 752840
+            "byteLength" : 92928,
+            "byteOffset" : 316840
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 949448,
+            "byteLength" : 409768,
             "uri" : "terrain.bin"
         }
     ]

@@ -9,14 +9,22 @@ var monster
 var monster02
 var ball:MeshInstance
 
+#DEBUG
+export var DEBUG_MODE:bool = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera = get_node("/root/Spatial/Player/NodeCamera/Camera")
 	monster = get_node("/root/Spatial/MonsterFull")
 	monster02 = get_node("/root/Spatial/MonsterFull2")
-	OS.window_size = Vector2(1920,1080)
-	OS.window_fullscreen = true
+	if DEBUG_MODE:
+		OS.window_size = Vector2(1024,768)
+		OS.window_fullscreen = false
+	else:
+		OS.window_size = Vector2(1920,1080)
+		OS.window_fullscreen = true
+	
 	
 	
 func _process(delta):

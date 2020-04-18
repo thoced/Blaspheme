@@ -91,9 +91,9 @@ func ia(delta):
 			if elapsedTimeChasse > 20.0: # après 20 secondes où le joueur est perdu, le monstre retourne en mode patrouille
 				setMode("PATROUILLE")
 				# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-				var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
-				nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
-				elapsedTimeChasse = 0.0
+				#var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
+				#nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
+				#elapsedTimeChasse = 0.0
 			elif mode == "CHASSE": # avant les 20 secondes, le monstre est mode recherche du joueur caché
 				# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
 				setMode("SEEKHIDE")
@@ -112,7 +112,10 @@ func seekhide():
 		newForward = newForward.normalized()
 		var seekPosition = translation + newForward * distance
 		nextPositionPatrouille = NavigationNode.get_closest_point(seekPosition)
-		setTargetPosition(nextPositionPatrouille)
+		if !setTargetPosition(nextPositionPatrouille):
+			# la position trouvée ne peut être atteinte par l'algo, on reposition la nextPositionPatrouille à l'emplacement
+			# exacte du monstre
+			nextPositionPatrouille = NavigationNode.get_closest_point(translation)
 		
 	
 func chasse():
@@ -125,7 +128,10 @@ func patrouille():
 		setMode("IDLE")
 		elapsedTimeIdle = 0.0
 	
-	setTargetPosition(nextPositionPatrouille)
+	if !setTargetPosition(nextPositionPatrouille):
+		# la position trouvée ne peut être atteinte par l'algo, on reposition la nextPositionPatrouille à l'emplacement
+		# exacte du monstre
+		nextPositionPatrouille = NavigationNode.get_closest_point(translation)
 
 	
 func isPlayerVisible():

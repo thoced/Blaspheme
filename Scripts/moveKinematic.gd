@@ -46,7 +46,7 @@ func _ready():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play(anim_name)
 
-func getSimpleNavigationPath(newTargetPosition):
+func getSimpleNavigationPath(newTargetPosition) -> bool:
 	simplePaths.empty()
 	print("newTargetPosition: " , newTargetPosition)
 	simplePaths = NavigationNode.get_simple_path(translation,newTargetPosition)
@@ -54,6 +54,10 @@ func getSimpleNavigationPath(newTargetPosition):
 	if simplePaths.size() != 0:
 		nextPoint = getNextPointPath()
 		onMove = true
+		return true
+	else:
+		return false
+		
 	
 
 func getNextPointPath():
@@ -108,11 +112,11 @@ func _physics_process(delta):
 	
 
 	
-func setTargetPosition(position):
+func setTargetPosition(position) -> bool:
 	targetPosition = position
-	targetPosition.y += 1
+	#targetPosition.y += 1
 	#createBall(position)
-	getSimpleNavigationPath(targetPosition)
+	return getSimpleNavigationPath(targetPosition)
 	
 func createBall(position):
 	var m = MeshInstance.new()

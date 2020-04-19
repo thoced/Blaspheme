@@ -47,7 +47,8 @@ func _process(delta):
 	elapsedTimeIdle += delta
 	if elapsedTime > timeToSearch:
 		elapsedTime = 0.0
-	else:return
+	else:
+		return
 	
 	# recherche du player
 	ia(delta)
@@ -125,7 +126,7 @@ func patrouille():
 		setMode("IDLE")
 		elapsedTimeIdle = 0.0
 	
-	if !setTargetPosition(nextPositionPatrouille):
+	elif !setTargetPosition(nextPositionPatrouille):
 		# la position trouvée ne peut être atteinte par l'algo, on reposition la nextPositionPatrouille à l'emplacement
 		# exacte du monstre
 		nextPositionPatrouille = NavigationNode.get_closest_point(translation)

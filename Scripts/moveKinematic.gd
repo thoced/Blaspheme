@@ -15,7 +15,7 @@ var indSimplePaths = -1
 var nblistPosTarget = 0
 var simplePaths = PoolVector3Array()
 var nextTargetPos
-var nextPoint
+var nextPoint setget ,getNextTargetPosition
 var onMove = false
 var dir : Vector3
 var targetPosition : Vector3
@@ -42,6 +42,8 @@ func _ready():
 	set_physics_process(true)
 	speed = speedWalk
 	
+func getNextTargetPosition():
+	return nextPoint
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play(anim_name)

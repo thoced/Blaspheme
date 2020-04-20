@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/zoneTest/zone01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/MonsterSpecific.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/pick.gd" type="Script" id=5]
 [ext_resource path="res://Assets/casier/casier.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/lit/lit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/PlayerSpecific.gd" type="Script" id=8]
 [ext_resource path="res://Assets/monster02/MonsterFull.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Script_control_monster.gd" type="Script" id=36]
 
@@ -93,7 +94,10 @@ PathPatrouille = NodePath("../NodePatrouille")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, -3.1797, 1.97785, -4.09726 )
-Maximum_Sprint_Speed = 0.8
+script = ExtResource( 8 )
+Sensitivity_X = 0.001
+Sensitivity_Y = 0.001
+Maximum_Sprint_Speed = 1.8
 Jump_Speed = 2.0
 
 [node name="AudioPas" type="AudioStreamPlayer3D" parent="Player"]
@@ -104,7 +108,6 @@ pitch_scale = 1.15
 
 [node name="Script_Pick" type="Spatial" parent="."]
 script = ExtResource( 5 )
-DEBUG_MODE = false
 
 [node name="Script_control_monster" type="Spatial" parent="."]
 script = ExtResource( 36 )

@@ -117,7 +117,8 @@ func seekhide():
 		
 	
 func chasse():
-	setTargetPosition(nextPositionPatrouille)
+	if !setTargetPosition(nextPositionPatrouille):
+		nextPositionPatrouille = NavigationNode.get_closest_point(nextPositionPatrouille)
 	
 func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:

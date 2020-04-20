@@ -18,15 +18,12 @@ data = PoolVector3Array( 5, 0, -2.3651, 3.55, 0, -5, 5, 0, -5, 5, 0, -2.3651, 3.
 shape = SubResource( 1 )
 
 [node name="Door" parent="." index="3" instance=ExtResource( 2 )]
-maxAngleOpen = 150.0
 
 [node name="Door2" parent="." index="4" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -3.21017, 0, -2.19291 )
-maxAngleOpen = 150.0
 
 [node name="Door3" parent="." index="5" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 3.06703, 0, -2.19291 )
-maxAngleOpen = 150.0
 
 [node name="door" parent="." index="6"]
 visible = false

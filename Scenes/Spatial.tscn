@@ -108,6 +108,7 @@ pitch_scale = 1.15
 
 [node name="Script_Pick" type="Spatial" parent="."]
 script = ExtResource( 5 )
+DEBUG_MODE = false
 
 [node name="Script_control_monster" type="Spatial" parent="."]
 script = ExtResource( 36 )

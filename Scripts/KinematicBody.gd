@@ -18,10 +18,14 @@ var Walk_Speed = 0.0
 var Sprint_Speed = 0.0
 var crounch = false
 var sprint = false
+var layer = false
 var bananeRotLeft = false
 var bananeRotRight = false
 var positionDown
 var positionUp
+var positionLayer
+var radiusStanding
+var heightStanding
 var bananeCenter
 var bananeLeft
 var bananeRight
@@ -39,6 +43,9 @@ func _ready():
 	
 	positionUp = $PivotCamera.transform.origin
 	positionDown = $PivotCamera.transform.origin + Vector3(0,-0.5,0)
+	positionLayer = $PivotCamera.transform.origin + Vector3(0,-0.8,0)
+	radiusStanding = $CollisionShape.shape.radius
+	heightStanding = $CollisionShape.shape.height
 	
 	bananeCenter = $PivotCamera.transform.basis
 	bananeLeft = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
@@ -111,16 +118,29 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 	#crounch
-	if crounch:
+	if crounch and !layer:
 		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionDown,0.1)
 		$PivotCamera.transform.origin = vNew
 	else:
 		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionUp,0.1)
 		$PivotCamera.transform.origin = vNew
 		
+	#layer
+	if layer:
+		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionLayer,0.1)
+		$PivotCamera.transform.origin = vNew
+		$CollisionShape.shape.radius =  lerp($CollisionShape.shape.radius,0.05,0.1)
+		$CollisionShape.shape.height = lerp($CollisionShape.shape.height,0.05,0.1)
+	elif !$CollisionShape/RayCastUp.is_colliding():
+		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionUp,0.1)
+		$PivotCamera.transform.origin = vNew
+		$CollisionShape.shape.height = lerp($CollisionShape.shape.height,heightStanding,0.1)
+		$CollisionShape.shape.radius = lerp($CollisionShape.shape.radius,radiusStanding,0.1)
+		
+	
 	#banane
-	var isCollidingLeft = $RayCastLeft.is_colliding() 
-	var isCollidingRight = $RayCastRight.is_colliding()
+	var isCollidingLeft = $CollisionShape/RayCastLeft.is_colliding() 
+	var isCollidingRight = $CollisionShape/RayCastRight.is_colliding()
 	if bananeRotLeft and !isCollidingLeft:
 		var vNew = $PivotCamera.transform.basis.slerp(bananeLeft,0.1)
 		$PivotCamera.transform.basis = vNew
@@ -149,6 +169,11 @@ func _input(event):
 		if event.pressed:
 			if event.scancode == KEY_CONTROL:
 				crounch = !crounch
+			if event.scancode == KEY_W:
+				crounch = false
+				layer = !layer
+				if !layer:
+					translation += Vector3(0,(heightStanding * 2) + 0.4,0)
 			if event.scancode == KEY_A:
 				bananeRotLeft = !bananeRotLeft
 				bananeRotRight = false

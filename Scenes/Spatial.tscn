@@ -149,4 +149,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473094, 1, 2.8711 )
 [node name="lit" parent="." groups=[
 "navmesh",
 ] instance=ExtResource( 7 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -1.18667, 0.31511, 2.0292 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -1.18667, 0.323237, 2.0292 )

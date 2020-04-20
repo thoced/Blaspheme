@@ -90,7 +90,7 @@ timeToSearch = 1.0
 PathPatrouille = NodePath("../NodePatrouille")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, -3.1797, 1.97785, -16.9422 )
+transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, -3.1797, 1.97785, -4.09726 )
 Maximum_Sprint_Speed = 0.8
 Jump_Speed = 2.0
 
@@ -123,4 +123,3 @@ environment = SubResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.901307, 0.21588, -0.375555, -0.0673632, 0.786573, 0.613812, 0.427911, 0.578532, -0.694401, -2.78086, 5.84395, -7.03252 )
-current = true

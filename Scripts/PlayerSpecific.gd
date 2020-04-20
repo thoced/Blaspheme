@@ -24,6 +24,7 @@ func _ready():
 	audioOiseau = get_node("/root/Spatial/AudioOiseau")
 	
 	inventaire.append("KEYGOLD")
+	changeSoundPas("PARQUET")
 		
 func _process(delta):
 	
@@ -43,7 +44,8 @@ func changeSoundPas(nameSound):
 			playerSound.unit_size = 21.0
 			playerSound.max_db = 3.0
 			playerSound.pitch_scale = 1.15
-			audioOiseau.stop()
+			if audioOiseau != null:
+				audioOiseau.stop()
 		
 		"CABANE":
 			playerSound.stream = streamPasParquet

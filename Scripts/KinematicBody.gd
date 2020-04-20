@@ -24,6 +24,8 @@ var bananeRotRight = false
 var positionDown
 var positionUp
 var positionLayer
+var scaledStanding
+var scaledLayer
 var radiusStanding
 var heightStanding
 var bananeCenter
@@ -43,19 +45,16 @@ func _ready():
 	
 	positionUp = $PivotCamera.transform.origin
 	positionDown = $PivotCamera.transform.origin + Vector3(0,-0.5,0)
-	positionLayer = $PivotCamera.transform.origin + Vector3(0,-0.8,0)
-	radiusStanding = $CollisionShape.shape.radius
-	heightStanding = $CollisionShape.shape.height
-	
+	# scale pour la positoin platventre
+	scaledStanding = scale
+	scaledLayer = scale * 0.1
+
 	bananeCenter = $PivotCamera.transform.basis
 	bananeLeft = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
 	bananeRight = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(15.0))
 	
 	nodeCameraZero = $PivotCamera/NodeCamera.transform.basis
-	
-	
-	
-	
+
 func _process(delta):
 	if Exit_On_Escape:
 		if Input.is_key_pressed(KEY_ESCAPE):
@@ -127,16 +126,9 @@ func _physics_process(delta):
 		
 	#layer
 	if layer:
-		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionLayer,0.1)
-		$PivotCamera.transform.origin = vNew
-		$CollisionShape.shape.radius =  lerp($CollisionShape.shape.radius,0.05,0.1)
-		$CollisionShape.shape.height = lerp($CollisionShape.shape.height,0.05,0.1)
+		scale = scale.linear_interpolate(scaledLayer,0.1)
 	elif !$CollisionShape/RayCastUp.is_colliding():
-		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionUp,0.1)
-		$PivotCamera.transform.origin = vNew
-		$CollisionShape.shape.height = lerp($CollisionShape.shape.height,heightStanding,0.1)
-		$CollisionShape.shape.radius = lerp($CollisionShape.shape.radius,radiusStanding,0.1)
-		
+		scale = scale.linear_interpolate(scaledStanding,0.1)
 	
 	#banane
 	var isCollidingLeft = $CollisionShape/RayCastLeft.is_colliding() 
@@ -172,8 +164,6 @@ func _input(event):
 			if event.scancode == KEY_W:
 				crounch = false
 				layer = !layer
-				if !layer:
-					translation += Vector3(0,(heightStanding * 2) + 0.4,0)
 			if event.scancode == KEY_A:
 				bananeRotLeft = !bananeRotLeft
 				bananeRotRight = false

@@ -139,7 +139,7 @@ func isPlayerVisible():
 	var to = player.translation
 	var space_state = get_world().direct_space_state
 	var result = space_state.intersect_ray(from,to)
-	if result != null and result["collider"] == player:
+	if result != null and result.size() > 0 and result["collider"] == player:
 		return true
 	else:
 		return false

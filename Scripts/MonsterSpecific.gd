@@ -136,7 +136,7 @@ func patrouille():
 func isPlayerVisible():
 	var ray_lenght = 1000
 	var mouse_pos = get_viewport().get_mouse_position()
-	var from = translation
+	var from = to_global($head.translation)
 	var to = player.translation
 	var space_state = get_world().direct_space_state
 	var result = space_state.intersect_ray(from,to)

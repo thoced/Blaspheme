@@ -6,6 +6,7 @@ class_name MonsterSpecific
 export var distanceViewPlayer:float = 24.0
 export var distanceClosestPlayer:float = 2.0
 export var timeToSearch:float = 2.0
+var timeToIdle = 2.0
 var player
 var distance = 0.0
 var elapsedTime = 0.0
@@ -119,7 +120,7 @@ func seekhide():
 			var forward = transform.basis.z
 			var angle = random.randf_range(-90.0,90.0)
 			var newForward = forward.rotated(Vector3.UP,angle)
-			var distance = random.randi_range(1,3)
+			var distance = random.randf_range(1.0,3.0)
 			newForward = newForward.normalized()
 			var seekPosition = translation + newForward * distance
 			nextPositionPatrouille = NavigationNode.get_closest_point(seekPosition)
@@ -139,6 +140,7 @@ func patrouille():
 		var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
 		nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
 		setMode("IDLE")
+		timeToIdle = createTimeForIdle()
 		elapsedTimeIdle = 0.0
 	
 	elif !setTargetPosition(nextPositionPatrouille):
@@ -158,7 +160,11 @@ func isPlayerVisible():
 		return true
 	else:
 		return false
-		
+
+func createTimeForIdle():
+	random.randomize()
+	return random.randf_range(2.0,5.0)
+
 func setMode(m):
 	mode = m 
 	match mode:

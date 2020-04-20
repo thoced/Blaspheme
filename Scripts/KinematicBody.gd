@@ -21,13 +21,9 @@ var sprint = false
 var layer = false
 var bananeRotLeft = false
 var bananeRotRight = false
-var positionDown
-var positionUp
-var positionLayer
 var scaledStanding
 var scaledLayer
-var radiusStanding
-var heightStanding
+var scaledCrounch
 var bananeCenter
 var bananeLeft
 var bananeRight
@@ -43,11 +39,10 @@ func _ready():
 	forward_velocity = Walk_Speed
 	set_process(true)
 	
-	positionUp = $PivotCamera.transform.origin
-	positionDown = $PivotCamera.transform.origin + Vector3(0,-0.5,0)
-	# scale pour la positoin platventre
+	# scale pour la positoin platventre et crounch
 	scaledStanding = scale
 	scaledLayer = scale * 0.1
+	scaledCrounch = scale * 0.5
 
 	bananeCenter = $PivotCamera.transform.basis
 	bananeLeft = $PivotCamera.transform.basis.rotated(Vector3.FORWARD,deg2rad(-15.0))
@@ -116,19 +111,14 @@ func _physics_process(delta):
 			velocity.y = Jump_Speed
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
-	#crounch
+	#crounch & layer
 	if crounch and !layer:
-		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionDown,0.1)
-		$PivotCamera.transform.origin = vNew
-	else:
-		var vNew = $PivotCamera.transform.origin.linear_interpolate(positionUp,0.1)
-		$PivotCamera.transform.origin = vNew
-		
-	#layer
-	if layer:
+		scale = scale.linear_interpolate(scaledCrounch,0.1)
+	elif layer:
 		scale = scale.linear_interpolate(scaledLayer,0.1)
-	elif !$CollisionShape/RayCastUp.is_colliding():
+	else:
 		scale = scale.linear_interpolate(scaledStanding,0.1)
+		
 	
 	#banane
 	var isCollidingLeft = $CollisionShape/RayCastLeft.is_colliding() 

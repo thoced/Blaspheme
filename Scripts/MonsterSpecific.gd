@@ -19,12 +19,13 @@ var nbPositionPatrouille = 0
 var random:RandomNumberGenerator
 var nextPositionPatrouille:Vector3
 var mode = "PATROUILLE"  
-
+var seekHideCpt = 0
 #variable DEBUG
 var modeGUI
 var positionGUI
 var distanceGUI
 var speedGUI
+var elapsedTimeGUI
 
 func _ready():
 	player = get_node("/root/Spatial/Player")
@@ -40,6 +41,7 @@ func _ready():
 	positionGUI = get_node("/root/Spatial/modeGui/newPosition")
 	distanceGUI = get_node("/root/Spatial/modeGui/distance")
 	speedGUI = get_node("/root/Spatial/modeGui/speed")
+	elapsedTimeGUI = get_node("/root/Spatial/modeGui/elapsedTimeChasse")
 	
 func _process(delta):
 	elapsedTime += delta
@@ -68,6 +70,7 @@ func _process(delta):
 	positionGUI.text = "position: " + String(nextPositionPatrouille)
 	distanceGUI.text = "distance: " + String(distance)
 	speedGUI.text = "speed: " + String(speed)
+	elapsedTimeGUI.text ="elapsedTimeChasse: " + String(elapsedTimeChasse)
 		
 func ia(delta):
 	# calcul de la distance entre le monstre et le joueur
@@ -95,6 +98,7 @@ func ia(delta):
 			elif mode == "CHASSE": # avant les 20 secondes, le monstre est mode recherche du joueur caché
 				# le monstre ne voit plus le joueur, il se met en mode recherche d'une personne cachée
 				setMode("SEEKHIDE")
+				seekHideCpt = 0
 	
 func idle():
 	if elapsedTimeIdle > 2.0:
@@ -103,17 +107,25 @@ func idle():
 					
 func seekhide():
 	if translation.distance_to(nextPositionPatrouille) < 1.0:
-		var forward = transform.basis.z
-		var angle = random.randf_range(-90.0,90.0)
-		var newForward = forward.rotated(Vector3.UP,angle)
-		var distance = random.randi_range(1,8)
-		newForward = newForward.normalized()
-		var seekPosition = translation + newForward * distance
-		nextPositionPatrouille = NavigationNode.get_closest_point(seekPosition)
-		if !setTargetPosition(nextPositionPatrouille):
-			# la position trouvée ne peut être atteinte par l'algo, on reposition la nextPositionPatrouille à l'emplacement
-			# exacte du monstre
-			nextPositionPatrouille = NavigationNode.get_closest_point(translation)
+		seekHideCpt += 1
+		# si le monstre vient juste de passer en monde SEEKHIDE alors il se dirige pour la première fois dans
+		# la même direction que le player puisqu'il vient juste de la quitter des yeux donc doit au moins savoir dans quelle
+		# directoin il est parti
+		if seekHideCpt < 2: 
+			nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
+			setTargetPosition(nextPositionPatrouille)
+		else:
+			var forward = transform.basis.z
+			var angle = random.randf_range(-90.0,90.0)
+			var newForward = forward.rotated(Vector3.UP,angle)
+			var distance = random.randi_range(1,4)
+			newForward = newForward.normalized()
+			var seekPosition = translation + newForward * distance
+			nextPositionPatrouille = NavigationNode.get_closest_point(seekPosition)
+			if !setTargetPosition(nextPositionPatrouille):
+				# la position trouvée ne peut être atteinte par l'algo, on reposition la nextPositionPatrouille à l'emplacement
+				# exacte du monstre
+				nextPositionPatrouille = NavigationNode.get_closest_point(translation)
 		
 	
 func chasse():

@@ -119,15 +119,19 @@ func _physics_process(delta):
 		$PivotCamera.transform.origin = vNew
 		
 	#banane
-	if bananeRotLeft:
+	var isCollidingLeft = $RayCastLeft.is_colliding()
+	var isCollidingRight = $RayCastRight.is_colliding()
+	if bananeRotLeft and !isCollidingLeft:
 		var vNew = $PivotCamera.transform.basis.slerp(bananeLeft,0.1)
 		$PivotCamera.transform.basis = vNew
-	if bananeRotRight:
+	if bananeRotRight and !isCollidingRight:
 		var vNew = $PivotCamera.transform.basis.slerp(bananeRight,0.1)
 		$PivotCamera.transform.basis = vNew
-	elif not(bananeRotLeft or bananeRotRight):
+	elif not(bananeRotLeft or bananeRotRight) or isCollidingLeft or isCollidingRight:
 		var vNew = $PivotCamera.transform.basis.slerp(bananeCenter,0.1)
 		$PivotCamera.transform.basis = vNew
+		bananeRotLeft = false
+		bananeRotRight = false
 		
 	# mouvement de roll en deplacement
 	

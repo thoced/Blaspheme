@@ -6,6 +6,7 @@ var openTransformDotNegatif
 var monster
 var player
 var opened = 0
+var bodyAtDoor = false
 var elapsedTimeOpened = 0.0
 var isAcceptAction = false
 
@@ -40,7 +41,7 @@ func _process(delta):
 			elapsedTimeOpened = 0.0
 			
 	# sinon fermeture de la porte avec la transformation current
-	elif opened == 0:
+	elif opened == 0 and !bodyAtDoor:
 		trans = $door.transform.basis.slerp(currentTransform,0.02)
 		$door.transform.basis = trans
 		if $door.transform.basis.is_equal_approx(currentTransform):
@@ -48,11 +49,13 @@ func _process(delta):
 	
 func _on_Area_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body == monster:
-			computeSideOfDoorOpen(monster)
-			$door/StaticBody/CollisionShape.disabled = true
+		bodyAtDoor = true
+		computeSideOfDoorOpen(monster)
+		$door/StaticBody/CollisionShape.disabled = true
 	elif body == player:
 		# c'est le player qui touche la porte, on accepte une action d'ouverture si demandée
 		acceptAction()
+		bodyAtDoor = true
 		
 func computeSideOfDoorOpen(body):
 	
@@ -80,5 +83,10 @@ func _input(event):
 func _on_Area_body_shape_exited(body_id, body, body_shape, area_shape):
 	if body == player:
 		refuseAction()
+		bodyAtDoor = false
+	if body == monster:
+		bodyAtDoor = false
+	
+		
 
 		

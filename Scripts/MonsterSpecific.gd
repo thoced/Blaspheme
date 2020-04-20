@@ -32,6 +32,7 @@ func _ready():
 	nodePatrouille = get_node(PathPatrouille)
 	nbPositionPatrouille = nodePatrouille.get_child_count()
 	random = RandomNumberGenerator.new()
+	random.randomize()
 	var i  = random.randi_range(0,nbPositionPatrouille - 1)
 	nextPositionPatrouille = nodePatrouille.get_child(i).translation
 	setTargetPosition(nextPositionPatrouille)
@@ -134,6 +135,7 @@ func chasse():
 	
 func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:
+		random.randomize()
 		var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
 		nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
 		setMode("IDLE")

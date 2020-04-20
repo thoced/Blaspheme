@@ -118,7 +118,7 @@ func seekhide():
 			var forward = transform.basis.z
 			var angle = random.randf_range(-90.0,90.0)
 			var newForward = forward.rotated(Vector3.UP,angle)
-			var distance = random.randi_range(1,4)
+			var distance = random.randi_range(1,3)
 			newForward = newForward.normalized()
 			var seekPosition = translation + newForward * distance
 			nextPositionPatrouille = NavigationNode.get_closest_point(seekPosition)

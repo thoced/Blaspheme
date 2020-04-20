@@ -119,7 +119,7 @@ func _physics_process(delta):
 		$PivotCamera.transform.origin = vNew
 		
 	#banane
-	var isCollidingLeft = $RayCastLeft.is_colliding()
+	var isCollidingLeft = $RayCastLeft.is_colliding() 
 	var isCollidingRight = $RayCastRight.is_colliding()
 	if bananeRotLeft and !isCollidingLeft:
 		var vNew = $PivotCamera.transform.basis.slerp(bananeLeft,0.1)

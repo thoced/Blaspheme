@@ -79,7 +79,6 @@ func _input(event):
 			if event.scancode == KEY_U:
 				computeSideOfDoorOpen(player)
 		
-	
 func _on_Area_body_shape_exited(body_id, body, body_shape, area_shape):
 	if body == player:
 		refuseAction()

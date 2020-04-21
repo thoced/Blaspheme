@@ -19,8 +19,11 @@ var nodePatrouille
 var nbPositionPatrouille = 0
 var random:RandomNumberGenerator
 var nextPositionPatrouille:Vector3
+var nextPositionChasse:Vector3
+var backTranslation:Vector3
 var mode = "PATROUILLE"  
 var seekHideCpt = 0
+var chasseCpt = 0
 #variable DEBUG
 var modeGUI
 var positionGUI
@@ -108,6 +111,7 @@ func idle():
 		elapsedTimeIdle = 0.0
 					
 func seekhide():
+	# or backTranslation sert à eviter que le seekHide bloque si le monstre ne bouge plus
 	if translation.distance_to(nextPositionPatrouille) < 1.0:
 		seekHideCpt += 1
 		# si le monstre vient juste de passer en monde SEEKHIDE alors il se dirige pour la première fois dans
@@ -129,10 +133,25 @@ func seekhide():
 				# exacte du monstre
 				nextPositionPatrouille = NavigationNode.get_closest_point(translation)
 		
+	backTranslation = translation
 	
 func chasse():
+	if chasseCpt > 1:
+		# la position tombe toujours sur un endroit inaccessible pour le monstre ex: navmesh isolé, alors on va diviser
+		# la distance entre la position du monstre et la position du joueur pour trouver une position intermédiaire
+		var direction = translation.direction_to(nextPositionChasse)
+		var distance = translation.distance_to(nextPositionChasse)
+		direction = direction.normalized()
+		nextPositionChasse = direction * (distance  * 0.5)
+		nextPositionChasse = NavigationNode.get_closest_point(nextPositionChasse)
+		nextPositionPatrouille = nextPositionChasse
+		
 	if !setTargetPosition(nextPositionPatrouille):
+		chasseCpt += 1
 		nextPositionPatrouille = NavigationNode.get_closest_point(nextPositionPatrouille)
+		nextPositionChasse = nextPositionPatrouille
+	else:
+		chasseCpt = 0
 	
 func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:

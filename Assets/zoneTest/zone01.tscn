@@ -41,6 +41,7 @@ extents = Vector3( 0.975758, 0.410926, 0.0547065 )
 [node name="zone" parent="." index="2" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="zone" index="0"]
 
@@ -57,10 +58,12 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 3.06703
 
 [node name="door" parent="." index="6"]
 visible = false
+use_in_baked_light = true
 
 [node name="Cube" parent="." index="7" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
 
@@ -70,6 +73,7 @@ shape = SubResource( 2 )
 [node name="Cube001" parent="." index="8" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube001" index="0"]
 
@@ -79,6 +83,7 @@ shape = SubResource( 3 )
 [node name="Cube002" parent="." index="9" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube002" index="0"]
 
@@ -88,6 +93,7 @@ shape = SubResource( 4 )
 [node name="Cube003" parent="." index="10" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube003" index="0"]
 
@@ -97,6 +103,7 @@ shape = SubResource( 5 )
 [node name="Cube004" parent="." index="11" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube004" index="0"]
 
@@ -106,6 +113,7 @@ shape = SubResource( 6 )
 [node name="Cube005" parent="." index="12" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube005" index="0"]
 
@@ -115,6 +123,7 @@ shape = SubResource( 7 )
 [node name="Cube006" parent="." index="13" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube006" index="0"]
 
@@ -124,15 +133,20 @@ shape = SubResource( 8 )
 [node name="Cube007" parent="." index="14" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="Cube007" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube007/StaticBody" index="0"]
 shape = SubResource( 9 )
 
+[node name="plafond" parent="." index="15"]
+use_in_baked_light = true
+
 [node name="escalier" parent="." index="16" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="escalier" index="0"]
 
@@ -142,6 +156,7 @@ shape = SubResource( 10 )
 [node name="gardecorps" parent="." index="17" groups=[
 "navmesh",
 ]]
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="gardecorps" index="0"]
 

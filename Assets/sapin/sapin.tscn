@@ -110,6 +110,7 @@ script = ExtResource( 3 )
 
 [node name="sapin" parent="." index="0"]
 material_override = SubResource( 9 )
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="." index="1"]
 

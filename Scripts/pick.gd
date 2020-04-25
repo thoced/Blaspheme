@@ -25,9 +25,7 @@ func _ready():
 		OS.window_size = Vector2(1920,1080)
 		OS.window_fullscreen = true
 	
-	var menu:Control
-	menu = get_node("/root/Spatial/Control")
-	menu.rect_size = OS.window_size
+
 
 	
 func _process(delta):

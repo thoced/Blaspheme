@@ -97,7 +97,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6513, 0, 0.703394 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.83664, 0, -2.69556 )
 
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.0241897, 0, -0.499415, 0, 0.5, 0, 0.499415, 0, 0.0241897, 37.0358, 1.2405, -1.57756 )
+transform = Transform( 0.0333817, 0, -0.689192, 0, 0.69, 0, 0.689192, 0, 0.0333817, 3.58727, 0.0682135, 2.81547 )
 script = ExtResource( 2 )
 speedWalk = 1.2
 speedSprint = 1.8
@@ -105,6 +105,14 @@ NavigationPath = NodePath("../Navigation")
 distanceViewPlayer = 20.0
 timeToSearch = 1.0
 PathPatrouille = NodePath("../NodePatrouille")
+
+[node name="OmniLight" type="OmniLight" parent="MonsterFull"]
+transform = Transform( 2, 0, 7.45058e-09, 0, 2, 0, 0, 0, 2, -2.38419e-07, 1.54986, 0.615242 )
+light_color = Color( 0.87451, 0.717647, 0.180392, 1 )
+light_energy = 3.75
+shadow_enabled = true
+omni_range = 3.9
+omni_attenuation = 1.51572
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.993809, 0, 0.111105, 0, 1.80818, 0, -0.111105, 0, -0.993809, -3.1797, 1.97785, -4.09726 )

@@ -37,6 +37,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966172, 0 )
 
 [node name="Camera" type="Camera" parent="PivotCamera/NodeCamera"]
 current = true
+far = 512.0
 
 [node name="SpotLight" type="SpotLight" parent="PivotCamera/NodeCamera/Camera"]
 visible = false

@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://OriginalModels/Terrain/sea.gltf" type="PackedScene" id=1]
+[ext_resource path="res://OriginalModels/Terrain/sea.png" type="Texture" id=2]
+
+[sub_resource type="VisualShaderNodeTexture" id=11]
+texture = ExtResource( 2 )
+
+[sub_resource type="VisualShaderNodeScalarOp" id=1]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=10]
+default_input_values = [ 0, 0.0, 1, 0.75 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=12]
+
+[sub_resource type="VisualShaderNodeInput" id=2]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=3]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id=4]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=6]
+function = 0
+
+[sub_resource type="VisualShaderNodeInput" id=7]
+input_name = "time"
+
+[sub_resource type="VisualShader" id=8]
+code = "shader_type spatial;
+uniform sampler2D tex_frg_2;
+
+
+
+void vertex() {
+// Input:2
+	vec3 n_out2p0 = VERTEX;
+
+// VectorDecompose:5
+	float n_out5p0 = n_out2p0.x;
+	float n_out5p1 = n_out2p0.y;
+	float n_out5p2 = n_out2p0.z;
+
+// Input:9
+	float n_out9p0 = TIME;
+
+// ScalarOp:10
+	float n_out10p0 = n_out9p0 + n_out5p0;
+
+// ScalarFunc:8
+	float n_out8p0 = sin(n_out10p0);
+
+// ScalarOp:11
+	float n_in11p1 = 0.75000;
+	float n_out11p0 = n_out8p0 * n_in11p1;
+
+// ScalarOp:12
+	float n_out12p0 = n_out5p0 + n_out11p0;
+
+// ScalarOp:7
+	float n_out7p0 = n_out5p1 + n_out11p0;
+
+// VectorCompose:6
+	vec3 n_out6p0 = vec3(n_out12p0, n_out7p0, n_out5p2);
+
+// Output:0
+	VERTEX = n_out6p0;
+
+}
+
+void fragment() {
+// Texture:2
+	vec4 tex_frg_2_read = texture(tex_frg_2, UV.xy);
+	vec3 n_out2p0 = tex_frg_2_read.rgb;
+	float n_out2p1 = tex_frg_2_read.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -81, 18.25 )
+nodes/vertex/0/position = Vector2( 1120, 80 )
+nodes/vertex/2/node = SubResource( 2 )
+nodes/vertex/2/position = Vector2( 20, 80 )
+nodes/vertex/5/node = SubResource( 3 )
+nodes/vertex/5/position = Vector2( 160, 160 )
+nodes/vertex/6/node = SubResource( 4 )
+nodes/vertex/6/position = Vector2( 740, 180 )
+nodes/vertex/7/node = SubResource( 5 )
+nodes/vertex/7/position = Vector2( 540, 40 )
+nodes/vertex/8/node = SubResource( 6 )
+nodes/vertex/8/position = Vector2( 400, 340 )
+nodes/vertex/9/node = SubResource( 7 )
+nodes/vertex/9/position = Vector2( -140, 340 )
+nodes/vertex/10/node = SubResource( 1 )
+nodes/vertex/10/position = Vector2( 200, 380 )
+nodes/vertex/11/node = SubResource( 10 )
+nodes/vertex/11/position = Vector2( 620, 300 )
+nodes/vertex/12/node = SubResource( 12 )
+nodes/vertex/12/position = Vector2( 580, 460 )
+nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 5, 1, 7, 0, 5, 2, 6, 2, 6, 0, 0, 0, 7, 0, 6, 1, 9, 0, 10, 0, 10, 0, 8, 0, 5, 0, 10, 1, 8, 0, 11, 0, 11, 0, 7, 1, 11, 0, 12, 1, 5, 0, 12, 0, 12, 0, 6, 0 )
+nodes/fragment/0/position = Vector2( 780, 20 )
+nodes/fragment/2/node = SubResource( 11 )
+nodes/fragment/2/position = Vector2( 0, 120 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+
+[node name="sea" instance=ExtResource( 1 )]
+
+[node name="sea" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+material_override = SubResource( 9 )

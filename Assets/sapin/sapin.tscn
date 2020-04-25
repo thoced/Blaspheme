@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://OriginalModels/ObjectsBlaspheme/sapin/sapin.gltf" type="PackedScene" id=1]
 [ext_resource path="res://OriginalModels/ObjectsBlaspheme/sapin/albedoSapin.png" type="Texture" id=2]
@@ -100,10 +100,7 @@ shader_param/sapinUniform = Vector3( 0.0192068, 0, 0.0192068 )
 
 [sub_resource type="CylinderShape" id=10]
 radius = 0.403987
-height = 2.69051
-
-[sub_resource type="SphereShape" id=11]
-radius = 0.89532
+height = 2.22619
 
 [node name="sapin" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -115,9 +112,5 @@ use_in_baked_light = true
 [node name="StaticBody" type="StaticBody" parent="." index="1"]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00554109, -0.405769, 0.127695 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00554109, 0.228249, 0.0127778 )
 shape = SubResource( 10 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.243885, 0.225498, 0 )
-shape = SubResource( 11 )

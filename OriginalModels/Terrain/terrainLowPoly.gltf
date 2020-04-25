@@ -22,125 +22,103 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "sapin"
+            "name" : "Plane"
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "albedo",
+            "name" : "Material",
             "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0,
-                    "texCoord" : 0
-                },
+                "baseColorFactor" : [
+                    0.052218250930309296,
+                    0.014688793569803238,
+                    0.00727951992303133,
+                    1
+                ],
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.824999988079071
+                "roughnessFactor" : 0.8583333492279053
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Cube",
+            "name" : "Plane",
             "primitives" : [
                 {
                     "attributes" : {
                         "POSITION" : 0,
                         "NORMAL" : 1,
-                        "TEXCOORD_0" : 2,
-                        "TEXCOORD_1" : 3
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 4,
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
-        }
-    ],
-    "textures" : [
-        {
-            "source" : 0
-        }
-    ],
-    "images" : [
-        {
-            "mimeType" : "image/png",
-            "name" : "albedoSapin",
-            "uri" : "albedoSapin.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 29728,
             "max" : [
-                0.8863269686698914,
-                2.7195725440979004,
-                0.9999999403953552
+                50,
+                10.497712135314941,
+                50
             ],
             "min" : [
-                -0.8863269686698914,
-                -1.0696301460266113,
-                -0.9999999403953552
+                -50,
+                -8.580603753216565e-05,
+                -50.000003814697266
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 29728,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 29728,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 216,
-            "type" : "VEC2"
-        },
-        {
-            "bufferView" : 4,
             "componentType" : 5123,
-            "count" : 294,
+            "count" : 43920,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 2592,
+            "byteLength" : 356736,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 2592,
-            "byteOffset" : 2592
+            "byteLength" : 356736,
+            "byteOffset" : 356736
         },
         {
             "buffer" : 0,
-            "byteLength" : 1728,
-            "byteOffset" : 5184
+            "byteLength" : 237824,
+            "byteOffset" : 713472
         },
         {
             "buffer" : 0,
-            "byteLength" : 1728,
-            "byteOffset" : 6912
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 588,
-            "byteOffset" : 8640
+            "byteLength" : 87840,
+            "byteOffset" : 951296
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 9228,
-            "uri" : "sapin.bin"
+            "byteLength" : 1039136,
+            "uri" : "terrainLowPoly.bin"
         }
     ]
 }

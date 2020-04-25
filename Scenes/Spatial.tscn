@@ -43,6 +43,7 @@ sun_energy = 0.56
 background_mode = 2
 background_sky = SubResource( 3 )
 background_energy = 0.9
+fog_enabled = true
 fog_color = Color( 0.501961, 0.486275, 0.486275, 1 )
 fog_sun_color = Color( 0, 0, 0, 1 )
 fog_depth_begin = 3.0
@@ -97,7 +98,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6513, 0, 0.703394 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.83664, 0, -2.69556 )
 
 [node name="MonsterFull" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.0333817, 0, -0.689192, 0, 0.69, 0, 0.689192, 0, 0.0333817, 3.58727, 0.0682135, 2.81547 )
+transform = Transform( 0.0333817, 0, -0.689192, 0, 0.69, 0, 0.689192, 0, 0.0333817, -39.8403, 0.0682135, 33.9216 )
 script = ExtResource( 2 )
 speedWalk = 1.2
 speedSprint = 1.8
@@ -107,10 +108,11 @@ timeToSearch = 1.0
 PathPatrouille = NodePath("../NodePatrouille")
 
 [node name="OmniLight" type="OmniLight" parent="MonsterFull"]
-transform = Transform( 2, 0, 7.45058e-09, 0, 2, 0, 0, 0, 2, -2.38419e-07, 1.54986, 0.615242 )
-light_color = Color( 0.87451, 0.717647, 0.180392, 1 )
-light_energy = 3.75
+transform = Transform( 1.44928, 0, 7.45058e-09, 0, 1.44928, 0, -7.45058e-09, 0, 1.44928, 0, 1.97281, 0.611254 )
+light_color = Color( 0.917647, 0.811765, 0.384314, 1 )
+light_energy = 2.1
 shadow_enabled = true
+shadow_color = Color( 0.176471, 0.172549, 0.172549, 1 )
 omni_range = 3.9
 omni_attenuation = 1.51572
 
@@ -137,7 +139,7 @@ script = ExtResource( 36 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.432154, -0.816029, -0.383849, -0.783836, 0.129425, 0.607331, -0.44592, 0.563335, -0.695564, 0, 17.2595, 27.9531 )
-light_color = Color( 0.490196, 0.580392, 0.67451, 1 )
+light_color = Color( 0.227451, 0.270588, 0.321569, 1 )
 light_energy = 0.1
 light_indirect_energy = 0.0
 shadow_enabled = true

@@ -48,9 +48,10 @@
                         "POSITION" : 0,
                         "NORMAL" : 1,
                         "TEXCOORD_0" : 2,
-                        "TEXCOORD_1" : 3
+                        "TEXCOORD_1" : 3,
+                        "COLOR_0" : 4
                     },
-                    "indices" : 4,
+                    "indices" : 5,
                     "material" : 0
                 }
             ]
@@ -72,7 +73,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 256,
             "max" : [
                 0.8863269686698914,
                 2.7195725440979004,
@@ -88,23 +89,29 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 256,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 256,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 216,
+            "count" : 256,
             "type" : "VEC2"
         },
         {
             "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 256,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 5,
             "componentType" : 5123,
             "count" : 294,
             "type" : "SCALAR"
@@ -113,33 +120,38 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 2592,
+            "byteLength" : 3072,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 2592,
-            "byteOffset" : 2592
+            "byteLength" : 3072,
+            "byteOffset" : 3072
         },
         {
             "buffer" : 0,
-            "byteLength" : 1728,
-            "byteOffset" : 5184
+            "byteLength" : 2048,
+            "byteOffset" : 6144
         },
         {
             "buffer" : 0,
-            "byteLength" : 1728,
-            "byteOffset" : 6912
+            "byteLength" : 2048,
+            "byteOffset" : 8192
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4096,
+            "byteOffset" : 10240
         },
         {
             "buffer" : 0,
             "byteLength" : 588,
-            "byteOffset" : 8640
+            "byteOffset" : 14336
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 9228,
+            "byteLength" : 14924,
             "uri" : "sapin.bin"
         }
     ]

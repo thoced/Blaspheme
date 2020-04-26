@@ -61,15 +61,15 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 58098,
+            "count" : 58675,
             "max" : [
                 202.31570434570312,
                 54.82638931274414,
-                73.70242309570312
+                73.6689224243164
             ],
             "min" : [
-                50.645835876464844,
-                -11.886955261230469,
+                50.84524917602539,
+                -21.43201446533203,
                 -76.44276428222656
             ],
             "type" : "VEC3"
@@ -77,47 +77,47 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 58098,
+            "count" : 58675,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 58098,
+            "count" : 58675,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 87846,
+            "count" : 88572,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 697176,
+            "byteLength" : 704100,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 697176,
-            "byteOffset" : 697176
+            "byteLength" : 704100,
+            "byteOffset" : 704100
         },
         {
             "buffer" : 0,
-            "byteLength" : 464784,
-            "byteOffset" : 1394352
+            "byteLength" : 469400,
+            "byteOffset" : 1408200
         },
         {
             "buffer" : 0,
-            "byteLength" : 175692,
-            "byteOffset" : 1859136
+            "byteLength" : 177144,
+            "byteOffset" : 1877600
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2034828,
+            "byteLength" : 2054744,
             "uri" : "terrainLowPoly.bin"
         }
     ]

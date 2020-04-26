@@ -20,7 +20,7 @@ func _process(delta):
 		elapsedTime = 0.0
 		random.randomize()
 		timeToLightning = random.randf_range(5.0,10.0)
-		environment.background_sky.sky_top_color = Color.white
+		environment.background_sky.sky_top_color = Color.aliceblue
 		isLightning = true
 	elif isLightning:
 		elapsedTimeLightning += delta

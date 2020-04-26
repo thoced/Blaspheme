@@ -46,9 +46,9 @@ func _process(delta):
 func scriptDialogue(userData):
 	for t in listText:
 		if t.length() > 0:
+			yield(get_tree().create_timer(3.0),"timeout")
 			text = t
 			yield(self,"EndOfText")
-			yield(get_tree().create_timer(3.0),"timeout")
 			posText = 0		
 		else:
 			call_deferred("setVisible",false)

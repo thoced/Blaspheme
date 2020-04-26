@@ -27,85 +27,7 @@ shape = SubResource( 1 )
 [node name="plainte" parent="." index="2"]
 use_in_baked_light = true
 
-[node name="plainte001" parent="." index="3"]
-use_in_baked_light = true
-
-[node name="plainte002" parent="." index="4"]
-use_in_baked_light = true
-
-[node name="plainte003" parent="." index="5"]
-use_in_baked_light = true
-
-[node name="plainte004" parent="." index="6"]
-use_in_baked_light = true
-
-[node name="plainte005" parent="." index="7"]
-use_in_baked_light = true
-
-[node name="plainte006" parent="." index="8"]
-use_in_baked_light = true
-
-[node name="plainte007" parent="." index="9"]
-use_in_baked_light = true
-
-[node name="plainte008" parent="." index="10"]
-use_in_baked_light = true
-
-[node name="plainte009" parent="." index="11"]
-use_in_baked_light = true
-
-[node name="plainte010" parent="." index="12"]
-use_in_baked_light = true
-
-[node name="plainte011" parent="." index="13"]
-use_in_baked_light = true
-
-[node name="plainte012" parent="." index="14"]
-use_in_baked_light = true
-
-[node name="plainte013" parent="." index="15"]
-use_in_baked_light = true
-
-[node name="plainte014" parent="." index="16"]
-use_in_baked_light = true
-
-[node name="plainte015" parent="." index="17"]
-use_in_baked_light = true
-
-[node name="plainte016" parent="." index="18"]
-use_in_baked_light = true
-
-[node name="plainte017" parent="." index="19"]
-use_in_baked_light = true
-
-[node name="plainte018" parent="." index="20"]
-use_in_baked_light = true
-
-[node name="plainte019" parent="." index="21"]
-use_in_baked_light = true
-
-[node name="plainte020" parent="." index="22"]
-use_in_baked_light = true
-
-[node name="plainte021" parent="." index="23"]
-use_in_baked_light = true
-
-[node name="plainte022" parent="." index="24"]
-use_in_baked_light = true
-
-[node name="plainte023" parent="." index="25"]
-use_in_baked_light = true
-
-[node name="plainte024" parent="." index="26"]
-use_in_baked_light = true
-
-[node name="plainte025" parent="." index="27"]
-use_in_baked_light = true
-
-[node name="plainte026" parent="." index="28"]
-use_in_baked_light = true
-
-[node name="rdc001" parent="." index="30"]
+[node name="rdc001" parent="." index="4"]
 use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="rdc001" index="0"]
@@ -113,7 +35,7 @@ use_in_baked_light = true
 [node name="CollisionShape" type="CollisionShape" parent="rdc001/StaticBody" index="0"]
 shape = SubResource( 2 )
 
-[node name="toit" parent="." index="31"]
+[node name="toit" parent="." index="5"]
 use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="toit" index="0"]
@@ -121,10 +43,88 @@ use_in_baked_light = true
 [node name="CollisionShape" type="CollisionShape" parent="toit/StaticBody" index="0"]
 shape = SubResource( 3 )
 
-[node name="dalle" parent="." index="32"]
+[node name="dalle" parent="." index="6"]
 use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="dalle" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="dalle/StaticBody" index="0"]
 shape = SubResource( 4 )
+
+[node name="plainte001" parent="." index="7"]
+use_in_baked_light = true
+
+[node name="plainte002" parent="." index="8"]
+use_in_baked_light = true
+
+[node name="plainte003" parent="." index="9"]
+use_in_baked_light = true
+
+[node name="plainte004" parent="." index="10"]
+use_in_baked_light = true
+
+[node name="plainte005" parent="." index="11"]
+use_in_baked_light = true
+
+[node name="plainte006" parent="." index="12"]
+use_in_baked_light = true
+
+[node name="plainte007" parent="." index="13"]
+use_in_baked_light = true
+
+[node name="plainte008" parent="." index="14"]
+use_in_baked_light = true
+
+[node name="plainte009" parent="." index="15"]
+use_in_baked_light = true
+
+[node name="plainte010" parent="." index="16"]
+use_in_baked_light = true
+
+[node name="plainte011" parent="." index="17"]
+use_in_baked_light = true
+
+[node name="plainte012" parent="." index="18"]
+use_in_baked_light = true
+
+[node name="plainte013" parent="." index="19"]
+use_in_baked_light = true
+
+[node name="plainte014" parent="." index="20"]
+use_in_baked_light = true
+
+[node name="plainte015" parent="." index="21"]
+use_in_baked_light = true
+
+[node name="plainte016" parent="." index="22"]
+use_in_baked_light = true
+
+[node name="plainte017" parent="." index="23"]
+use_in_baked_light = true
+
+[node name="plainte018" parent="." index="24"]
+use_in_baked_light = true
+
+[node name="plainte019" parent="." index="25"]
+use_in_baked_light = true
+
+[node name="plainte020" parent="." index="26"]
+use_in_baked_light = true
+
+[node name="plainte021" parent="." index="27"]
+use_in_baked_light = true
+
+[node name="plainte022" parent="." index="28"]
+use_in_baked_light = true
+
+[node name="plainte023" parent="." index="29"]
+use_in_baked_light = true
+
+[node name="plainte024" parent="." index="30"]
+use_in_baked_light = true
+
+[node name="plainte025" parent="." index="31"]
+use_in_baked_light = true
+
+[node name="plainte026" parent="." index="32"]
+use_in_baked_light = true

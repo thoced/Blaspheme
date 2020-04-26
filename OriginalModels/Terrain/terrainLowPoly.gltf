@@ -61,7 +61,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 58086,
+            "count" : 58098,
             "max" : [
                 202.31570434570312,
                 54.82638931274414,
@@ -69,7 +69,7 @@
             ],
             "min" : [
                 50.645835876464844,
-                -11.353446006774902,
+                -11.886955261230469,
                 -76.44276428222656
             ],
             "type" : "VEC3"
@@ -77,13 +77,13 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 58086,
+            "count" : 58098,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 58086,
+            "count" : 58098,
             "type" : "VEC2"
         },
         {
@@ -96,28 +96,28 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 697032,
+            "byteLength" : 697176,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 697032,
-            "byteOffset" : 697032
+            "byteLength" : 697176,
+            "byteOffset" : 697176
         },
         {
             "buffer" : 0,
-            "byteLength" : 464688,
-            "byteOffset" : 1394064
+            "byteLength" : 464784,
+            "byteOffset" : 1394352
         },
         {
             "buffer" : 0,
             "byteLength" : 175692,
-            "byteOffset" : 1858752
+            "byteOffset" : 1859136
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2034444,
+            "byteLength" : 2034828,
             "uri" : "terrainLowPoly.bin"
         }
     ]

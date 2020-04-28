@@ -1,0 +1,82 @@
+[gd_resource type="QuadMesh" load_steps=9 format=2]
+
+[sub_resource type="VisualShaderNodeInput" id=1]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=2]
+
+[sub_resource type="VisualShaderNodeInput" id=3]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeScalarOp" id=4]
+operator = 1
+
+[sub_resource type="VisualShaderNodeVectorCompose" id=5]
+
+[sub_resource type="VisualShaderNodeScalarOp" id=6]
+default_input_values = [ 0, 0.0, 1, 10.0 ]
+operator = 2
+
+[sub_resource type="VisualShader" id=7]
+code = "shader_type spatial;
+
+
+
+void vertex() {
+// Input:2
+	vec3 n_out2p0 = VERTEX;
+
+// VectorDecompose:3
+	float n_out3p0 = n_out2p0.x;
+	float n_out3p1 = n_out2p0.y;
+	float n_out3p2 = n_out2p0.z;
+
+// Input:4
+	float n_out4p0 = TIME;
+
+// ScalarOp:7
+	float n_in7p1 = 10.00000;
+	float n_out7p0 = n_out4p0 * n_in7p1;
+
+// ScalarOp:5
+	float n_out5p0 = n_out3p1 - n_out7p0;
+
+// VectorCompose:6
+	vec3 n_out6p0 = vec3(n_out3p0, n_out5p0, n_out3p2);
+
+// Output:0
+	VERTEX = n_out6p0;
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 0, 163.429 )
+nodes/vertex/0/position = Vector2( 1280, 120 )
+nodes/vertex/2/node = SubResource( 1 )
+nodes/vertex/2/position = Vector2( 80, 160 )
+nodes/vertex/3/node = SubResource( 2 )
+nodes/vertex/3/position = Vector2( 300, 180 )
+nodes/vertex/4/node = SubResource( 3 )
+nodes/vertex/4/position = Vector2( 40, 360 )
+nodes/vertex/5/node = SubResource( 4 )
+nodes/vertex/5/position = Vector2( 600, 300 )
+nodes/vertex/6/node = SubResource( 5 )
+nodes/vertex/6/position = Vector2( 1060, 180 )
+nodes/vertex/7/node = SubResource( 6 )
+nodes/vertex/7/position = Vector2( 440, 400 )
+nodes/vertex/connections = PoolIntArray( 2, 0, 3, 0, 3, 1, 5, 0, 3, 0, 6, 0, 3, 2, 6, 2, 5, 0, 6, 1, 7, 0, 5, 1, 6, 0, 0, 0, 4, 0, 7, 0 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+
+[resource]
+material = SubResource( 8 )

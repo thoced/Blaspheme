@@ -36,6 +36,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966172, 0 )
 
 [node name="Camera" type="Camera" parent="PivotCamera/NodeCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
 current = true
 far = 512.0
 

@@ -35,6 +35,7 @@ shape = SubResource( 1 )
 
 [node name="door" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0345769, 0.0547383, 0.509088 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 

@@ -32,6 +32,7 @@ func _process(delta):
 	pass
 
 func _input(event):
+	return
 	if event is InputEventMouseButton and event.is_pressed():
 		var ray_lenght = 1000
 		var mouse_pos = get_viewport().get_mouse_position()

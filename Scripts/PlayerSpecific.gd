@@ -9,6 +9,7 @@ var audioDoor
 var streamPasParquet = load("res://Sons/pas.wav")
 var streamPasHerbe = load("res://Sons/pasHerbe.wav")
 var audioOiseau
+var isHideInGrass = false
 
 #Inventaire
 var inventaire:Array setget ,getInventaire

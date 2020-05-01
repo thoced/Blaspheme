@@ -83,7 +83,7 @@ func ia(delta):
 			  
 	# si la distance est inférieur à distanceClosestPlayer et que le joueur est visible
 	# (evite que le joueur qui tourne autour du monstre le rend invisible une fois derrière)
-	if distance < distanceClosestPlayer and isPlayerVisible():
+	if distance < distanceClosestPlayer and isPlayerVisible(distance):
 		setMode("CHASSE")
 		elapsedTimeChasse = 0.0
 		nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
@@ -93,7 +93,7 @@ func ia(delta):
 		var diff = to_global($head.translation).direction_to(player.translation)
 		diff = diff.normalized()
 		var dot = transform.basis.z.dot(diff)
-		if dot > -0.15 and isPlayerVisible():
+		if dot > -0.15 and isPlayerVisible(distance):
 			setMode("CHASSE")
 			elapsedTimeChasse = 0.0
 			nextPositionPatrouille = NavigationNode.get_closest_point(player.translation)
@@ -168,7 +168,13 @@ func patrouille():
 		nextPositionPatrouille = NavigationNode.get_closest_point(translation)
 
 	
-func isPlayerVisible():
+func isPlayerVisible(distance):
+	
+	# si le joueur est caché dans l'herbe alors le monstre ne le voit pas à condition que la distance soit inférieur
+	# à distanceClosestPlayer
+	if player.isHideInGrass == true and (player.crounch or player.layer) and distance > distanceClosestPlayer:
+		return false
+		
 	var ray_lenght = 1000
 	var mouse_pos = get_viewport().get_mouse_position()
 	var from = to_global($head.translation)

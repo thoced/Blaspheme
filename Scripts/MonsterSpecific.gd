@@ -38,7 +38,7 @@ func _ready():
 	random = RandomNumberGenerator.new()
 	random.randomize()
 	var i  = random.randi_range(0,nbPositionPatrouille - 1)
-	nextPositionPatrouille = nodePatrouille.get_child(i).translation
+	nextPositionPatrouille = to_global(nodePatrouille.get_child(i).translation)
 	setTargetPosition(nextPositionPatrouille)
 	
 	#debug

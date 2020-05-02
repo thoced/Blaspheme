@@ -16,30 +16,30 @@ operator = 3
 [sub_resource type="VisualShaderNodeVectorOp" id=4]
 operator = 2
 
-[sub_resource type="VisualShaderNodeColorFunc" id=14]
+[sub_resource type="VisualShaderNodeColorFunc" id=17]
 
-[sub_resource type="VisualShaderNodeInput" id=5]
+[sub_resource type="VisualShaderNodeInput" id=6]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=6]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=7]
 
-[sub_resource type="VisualShaderNodeVec3Constant" id=7]
+[sub_resource type="VisualShaderNodeVec3Constant" id=8]
 constant = Vector3( 0.45, 0, 0.6 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=8]
-
 [sub_resource type="VisualShaderNodeVectorOp" id=9]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=10]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=10]
+[sub_resource type="VisualShaderNodeInput" id=11]
 input_name = "time"
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=11]
+[sub_resource type="VisualShaderNodeVectorCompose" id=12]
 
-[sub_resource type="VisualShaderNodeTexture" id=12]
+[sub_resource type="VisualShaderNodeTexture" id=13]
 texture = ExtResource( 2 )
 
-[sub_resource type="VisualShader" id=13]
+[sub_resource type="VisualShader" id=14]
 code = "shader_type spatial;
 render_mode cull_disabled;
 
@@ -48,11 +48,11 @@ uniform sampler2D tex_vtx_9;
 
 
 void vertex() {
-// Input:2
-	vec3 n_out2p0 = VERTEX;
-
 // Vector:4
 	vec3 n_out4p0 = vec3(0.450000, 0.000000, 0.600000);
+
+// Input:2
+	vec3 n_out2p0 = VERTEX;
 
 // VectorDecompose:3
 	float n_out3p0 = n_out2p0.x;
@@ -78,24 +78,24 @@ void vertex() {
 	vec3 n_out9p0 = tex_vtx_9_read.rgb;
 	float n_out9p1 = tex_vtx_9_read.a;
 
-// ColorFunc:17
-	vec3 n_out17p0;
+// ColorFunc:15
+	vec3 n_out15p0;
 	{
 		vec3 c = n_out9p0;
 		float max1 = max(c.r, c.g);
 		float max2 = max(max1, c.b);
 		float max3 = max(max1, max2);
-		n_out17p0 = vec3(max3, max3, max3);
+		n_out15p0 = vec3(max3, max3, max3);
 	}
 
 // VectorOp:14
-	vec3 n_out14p0 = n_out4p0 * n_out17p0;
+	vec3 n_out14p0 = n_out4p0 * n_out15p0;
 
 // VectorOp:6
 	vec3 n_out6p0 = n_out14p0 * vec3(n_out3p1);
 
 // VectorOp:5
-	vec3 n_out5p0 = n_out2p0 + n_out6p0;
+	vec3 n_out5p0 = n_out6p0 + n_out2p0;
 
 // Output:0
 	VERTEX = n_out5p0;
@@ -117,40 +117,40 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -632.048, 16 )
+graph_offset = Vector2( -692, 111.5 )
 modes/cull = 2
 nodes/vertex/0/position = Vector2( 540, 140 )
-nodes/vertex/2/node = SubResource( 5 )
-nodes/vertex/2/position = Vector2( -540, 100 )
-nodes/vertex/3/node = SubResource( 6 )
+nodes/vertex/2/node = SubResource( 6 )
+nodes/vertex/2/position = Vector2( -540, 40 )
+nodes/vertex/3/node = SubResource( 7 )
 nodes/vertex/3/position = Vector2( -380, 200 )
-nodes/vertex/4/node = SubResource( 7 )
+nodes/vertex/4/node = SubResource( 8 )
 nodes/vertex/4/position = Vector2( 100, 480 )
-nodes/vertex/5/node = SubResource( 8 )
+nodes/vertex/5/node = SubResource( 9 )
 nodes/vertex/5/position = Vector2( 180, 200 )
-nodes/vertex/6/node = SubResource( 9 )
+nodes/vertex/6/node = SubResource( 10 )
 nodes/vertex/6/position = Vector2( 40, 40 )
-nodes/vertex/7/node = SubResource( 10 )
+nodes/vertex/7/node = SubResource( 11 )
 nodes/vertex/7/position = Vector2( -880, 340 )
-nodes/vertex/8/node = SubResource( 11 )
+nodes/vertex/8/node = SubResource( 12 )
 nodes/vertex/8/position = Vector2( -760, 160 )
-nodes/vertex/9/node = SubResource( 12 )
+nodes/vertex/9/node = SubResource( 13 )
 nodes/vertex/9/position = Vector2( -240, 320 )
 nodes/vertex/12/node = SubResource( 2 )
 nodes/vertex/12/position = Vector2( -620, 320 )
 nodes/vertex/13/node = SubResource( 3 )
 nodes/vertex/13/position = Vector2( -500, 420 )
 nodes/vertex/14/node = SubResource( 4 )
-nodes/vertex/14/position = Vector2( 100, 340 )
-nodes/vertex/17/node = SubResource( 14 )
-nodes/vertex/17/position = Vector2( -60, 560 )
-nodes/vertex/connections = PoolIntArray( 2, 0, 3, 0, 2, 0, 5, 0, 3, 1, 6, 1, 6, 0, 5, 1, 3, 0, 8, 0, 3, 2, 8, 1, 8, 0, 12, 0, 7, 0, 12, 1, 12, 0, 13, 0, 13, 0, 9, 0, 4, 0, 14, 0, 14, 0, 6, 0, 9, 0, 17, 0, 17, 0, 14, 1, 5, 0, 0, 0 )
+nodes/vertex/14/position = Vector2( 60, 320 )
+nodes/vertex/15/node = SubResource( 17 )
+nodes/vertex/15/position = Vector2( -100, 580 )
+nodes/vertex/connections = PoolIntArray( 3, 1, 6, 1, 3, 0, 8, 0, 3, 2, 8, 1, 8, 0, 12, 0, 7, 0, 12, 1, 12, 0, 13, 0, 13, 0, 9, 0, 4, 0, 14, 0, 14, 0, 6, 0, 5, 0, 0, 0, 2, 0, 3, 0, 2, 0, 5, 1, 6, 0, 5, 0, 9, 0, 15, 0, 15, 0, 14, 1 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( 79.766, 183 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
 
 [sub_resource type="ShaderMaterial" id=15]
-shader = SubResource( 13 )
+shader = SubResource( 14 )
 
 [sub_resource type="BoxShape" id=16]
 extents = Vector3( 12.3727, 0.993688, 13.5042 )

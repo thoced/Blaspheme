@@ -61,63 +61,63 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 58675,
+            "count" : 61421,
             "max" : [
-                202.31570434570312,
-                54.82638931274414,
-                73.6689224243164
+                195.32931518554688,
+                49.77100372314453,
+                78.71772766113281
             ],
             "min" : [
-                50.84524917602539,
-                -21.43201446533203,
-                -76.44276428222656
+                -8.530407905578613,
+                -26.48740005493164,
+                -73.41828155517578
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 58675,
+            "count" : 61421,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 58675,
+            "count" : 61421,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 88572,
+            "count" : 100560,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 704100,
+            "byteLength" : 737052,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 704100,
-            "byteOffset" : 704100
+            "byteLength" : 737052,
+            "byteOffset" : 737052
         },
         {
             "buffer" : 0,
-            "byteLength" : 469400,
-            "byteOffset" : 1408200
+            "byteLength" : 491368,
+            "byteOffset" : 1474104
         },
         {
             "buffer" : 0,
-            "byteLength" : 177144,
-            "byteOffset" : 1877600
+            "byteLength" : 201120,
+            "byteOffset" : 1965472
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2054744,
+            "byteLength" : 2166592,
             "uri" : "terrainLowPoly.bin"
         }
     ]

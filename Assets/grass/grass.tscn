@@ -20,10 +20,10 @@ operator = 2
 [sub_resource type="VisualShaderNodeColorFunc" id=7]
 
 [sub_resource type="VisualShaderNodeColorConstant" id=20]
-constant = Color( 0.124723, 0.363281, 0.0752106, 1 )
+constant = Color( 0.0983898, 0.28125, 0.0604377, 1 )
 
 [sub_resource type="VisualShaderNodeColorConstant" id=21]
-constant = Color( 0.398438, 0.172483, 0.112079, 1 )
+constant = Color( 0.277344, 0.108948, 0.0639318, 1 )
 
 [sub_resource type="VisualShaderNodeVectorInterp" id=22]
 
@@ -107,11 +107,11 @@ void vertex() {
 	vec3 n_out5p0 = n_out6p0 + n_out2p0;
 
 // Color:17
-	vec3 n_out17p0 = vec3(0.398438, 0.172483, 0.112079);
+	vec3 n_out17p0 = vec3(0.277344, 0.108948, 0.063932);
 	float n_out17p1 = 1.000000;
 
 // Color:16
-	vec3 n_out16p0 = vec3(0.124723, 0.363281, 0.075211);
+	vec3 n_out16p0 = vec3(0.098390, 0.281250, 0.060438);
 	float n_out16p1 = 1.000000;
 
 // VectorMix:18
@@ -137,7 +137,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -289.012, -192 )
+graph_offset = Vector2( -266.012, -247 )
 modes/cull = 2
 nodes/vertex/0/position = Vector2( 540, 140 )
 nodes/vertex/2/node = SubResource( 8 )
@@ -167,10 +167,10 @@ nodes/vertex/15/position = Vector2( -100, 580 )
 nodes/vertex/16/node = SubResource( 20 )
 nodes/vertex/16/position = Vector2( 240, -60 )
 nodes/vertex/17/node = SubResource( 21 )
-nodes/vertex/17/position = Vector2( 260, -160 )
+nodes/vertex/17/position = Vector2( 240, -160 )
 nodes/vertex/18/node = SubResource( 22 )
 nodes/vertex/18/position = Vector2( 380, -40 )
-nodes/vertex/connections = PoolIntArray( 3, 1, 6, 1, 3, 0, 8, 0, 3, 2, 8, 1, 8, 0, 12, 0, 7, 0, 12, 1, 12, 0, 13, 0, 13, 0, 9, 0, 4, 0, 14, 0, 14, 0, 6, 0, 5, 0, 0, 0, 2, 0, 3, 0, 2, 0, 5, 1, 6, 0, 5, 0, 9, 0, 15, 0, 15, 0, 14, 1, 18, 0, 0, 6, 3, 1, 18, 2, 17, 0, 18, 0, 16, 0, 18, 1 )
+nodes/vertex/connections = PoolIntArray( 3, 0, 8, 0, 3, 2, 8, 1, 8, 0, 12, 0, 7, 0, 12, 1, 12, 0, 13, 0, 13, 0, 9, 0, 4, 0, 14, 0, 14, 0, 6, 0, 5, 0, 0, 0, 2, 0, 3, 0, 2, 0, 5, 1, 6, 0, 5, 0, 9, 0, 15, 0, 15, 0, 14, 1, 18, 0, 0, 6, 3, 1, 18, 2, 17, 0, 18, 0, 16, 0, 18, 1, 3, 1, 6, 1 )
 nodes/fragment/2/node = SubResource( 19 )
 nodes/fragment/2/position = Vector2( 20, 240 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )

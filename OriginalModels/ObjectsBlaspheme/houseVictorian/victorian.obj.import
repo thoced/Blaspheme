@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/victorian.obj-26465f439501303abd81a7d3b6097d34.mesh"
+
+[deps]
+
+files=[ "res://.import/victorian.obj-26465f439501303abd81a7d3b6097d34.mesh" ]
+
+source_file="res://OriginalModels/ObjectsBlaspheme/houseVictorian/victorian.obj"
+dest_files=[ "res://.import/victorian.obj-26465f439501303abd81a7d3b6097d34.mesh", "res://.import/victorian.obj-26465f439501303abd81a7d3b6097d34.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

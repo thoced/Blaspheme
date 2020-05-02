@@ -38,7 +38,7 @@ func _ready():
 	random = RandomNumberGenerator.new()
 	random.randomize()
 	var i  = random.randi_range(0,nbPositionPatrouille - 1)
-	nextPositionPatrouille = to_global(nodePatrouille.get_child(i).translation)
+	nextPositionPatrouille = nodePatrouille.get_child(i).translation
 	setTargetPosition(nextPositionPatrouille)
 	
 	#debug
@@ -157,7 +157,7 @@ func patrouille():
 	if translation.distance_to(nextPositionPatrouille) < 1.0 and nbPositionPatrouille > 0:
 		random.randomize()
 		var indRandom = random.randi_range(0,nbPositionPatrouille - 1)
-		nextPositionPatrouille = NavigationNode.get_closest_point(to_global(nodePatrouille.get_child(indRandom).translation))
+		nextPositionPatrouille = NavigationNode.get_closest_point(nodePatrouille.get_child(indRandom).translation)
 		setMode("IDLE")
 		timeToIdle = createTimeForIdle()
 		elapsedTimeIdle = 0.0

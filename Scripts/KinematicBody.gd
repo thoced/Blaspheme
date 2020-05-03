@@ -36,6 +36,7 @@ var onMove = false
 export var staminaMax = 100.0 
 var stamina = staminaMax
 export var staminaStep = 5.0
+export var staminaStepRecovery = 2.0
 
 
 func _ready():
@@ -109,7 +110,7 @@ func _physics_process(delta):
 	else:
 		Sprint_Speed = 0.0
 		sprint = false
-		stamina += staminaStep * delta
+		stamina += staminaStepRecovery * delta
 		if stamina > staminaMax:
 			stamina = staminaMax
 				

@@ -16,9 +16,6 @@ var velocity = Vector3(0,0,0)
 var forward_velocity = 0
 var Walk_Speed = 0.0
 var Sprint_Speed = 0.0
-var crounch = false
-var sprint = false
-var layer = false
 var bananeRotLeft = false
 var bananeRotRight = false
 var scaledStanding
@@ -31,7 +28,6 @@ var nodeCameraZero
 var deg = 0.0
 var amplitude = 0.6
 var speedDeg = 12
-var onMove = false
 #stamina
 export var staminaMax = 100.0 
 var stamina = staminaMax
@@ -63,7 +59,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	velocity.y -= GRAVITY
-	onMove = false
+	PlayerVariables.onMove = false
 	
 	if Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_UP):
 		Walk_Speed += Accelaration * delta
@@ -71,7 +67,7 @@ func _physics_process(delta):
 			Walk_Speed = Maximum_Walk_Speed + Sprint_Speed
 		velocity.x = -global_transform.basis.z.x * Walk_Speed
 		velocity.z = -global_transform.basis.z.z * Walk_Speed
-		onMove = true
+		PlayerVariables.onMove = true
 		deg += delta * speedDeg
 		
 		
@@ -81,7 +77,7 @@ func _physics_process(delta):
 			Walk_Speed = Maximum_Walk_Speed + Sprint_Speed
 		velocity.x = global_transform.basis.z.x * Walk_Speed
 		velocity.z = global_transform.basis.z.z * Walk_Speed
-		onMove = true
+		PlayerVariables.onMove = true
 		deg -= delta * speedDeg
 		
 	if Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_Q):
@@ -90,7 +86,7 @@ func _physics_process(delta):
 			Walk_Speed = Maximum_Walk_Speed + Sprint_Speed
 		velocity.x = -global_transform.basis.x.x * Walk_Speed
 		velocity.z = -global_transform.basis.x.z * Walk_Speed	
-		onMove = true
+		PlayerVariables.onMove = true
 		
 	if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_D):
 		Walk_Speed += Accelaration * delta
@@ -98,29 +94,29 @@ func _physics_process(delta):
 			Walk_Speed = Maximum_Walk_Speed + Sprint_Speed
 		velocity.x = global_transform.basis.x.x * Walk_Speed
 		velocity.z = global_transform.basis.x.z * Walk_Speed
-		onMove = true
+		PlayerVariables.onMove = true
 		
-	if Input.is_key_pressed(KEY_SHIFT) and (stamina > staminaStep):
+	if Input.is_key_pressed(KEY_SHIFT) and (PlayerVariables.stamina > PlayerVariables.staminaStep):
 		Sprint_Speed = Maximum_Sprint_Speed
-		sprint = true
+		PlayerVariables.sprint = true
 		# modification du stamina
-		if onMove:
-			stamina -= staminaStep * delta
-			if stamina < 0.0:
-				stamina = 0.0
+		if PlayerVariables.onMove:
+			PlayerVariables.stamina -= PlayerVariables.staminaStep * delta
+			if PlayerVariables.stamina < 0.0:
+				PlayerVariables.stamina = 0.0
 	else:
 		Sprint_Speed = 0.0
-		sprint = false
+		PlayerVariables.sprint = false
 		# modification du stamina
-		stamina += staminaStepRecovery * delta
-		if stamina > staminaMax:
-			stamina = staminaMax
+		PlayerVariables.stamina += PlayerVariables.staminaStepRecovery * delta
+		if PlayerVariables.stamina > PlayerVariables.staminaMax:
+			PlayerVariables.stamina = PlayerVariables.staminaMax
 				
 	if not(Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_Q) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT)):
 		velocity.x = 0
 		velocity.z = 0
 		Walk_Speed = 0.0
-		onMove = false
+		PlayerVariables.onMove = false
 		
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_accept"):
@@ -128,9 +124,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3(0,1,0))
 	
 	#crounch & layer
-	if crounch and !layer:
+	if PlayerVariables.crounch and !PlayerVariables.layer:
 		scale = scale.linear_interpolate(scaledCrounch,0.1)
-	elif layer:
+	elif PlayerVariables.layer:
 		scale = scale.linear_interpolate(scaledLayer,0.1)
 	else:
 		scale = scale.linear_interpolate(scaledStanding,0.1)
@@ -166,10 +162,10 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if event.scancode == KEY_CONTROL:
-				crounch = !crounch
+				PlayerVariables.crounch = !PlayerVariables.crounch
 			if event.scancode == KEY_W:
-				crounch = false
-				layer = !layer
+				PlayerVariables.crounch = false
+				PlayerVariables.layer = !PlayerVariables.layer
 			if event.scancode == KEY_A:
 				bananeRotLeft = !bananeRotLeft
 				bananeRotRight = false

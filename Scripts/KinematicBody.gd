@@ -32,6 +32,10 @@ var deg = 0.0
 var amplitude = 0.6
 var speedDeg = 12
 var onMove = false
+#stamina
+export var staminaMax = 100.0 
+var stamina = staminaMax
+export var staminaStep = 5.0
 
 
 func _ready():
@@ -95,11 +99,20 @@ func _physics_process(delta):
 		velocity.z = global_transform.basis.x.z * Walk_Speed
 		onMove = true
 		
-	if Input.is_key_pressed(KEY_SHIFT):
+	if Input.is_key_pressed(KEY_SHIFT) and (stamina > staminaStep):
 		Sprint_Speed = Maximum_Sprint_Speed
+		sprint = true
+		stamina -= staminaStep * delta
+		if stamina < 0.0:
+			stamina = 0.0
+		# modification du stamina
 	else:
 		Sprint_Speed = 0.0
-		
+		sprint = false
+		stamina += staminaStep * delta
+		if stamina > staminaMax:
+			stamina = staminaMax
+				
 	if not(Input.is_key_pressed(KEY_Z) or Input.is_key_pressed(KEY_Q) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_UP) or Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_LEFT) or Input.is_key_pressed(KEY_RIGHT)):
 		velocity.x = 0
 		velocity.z = 0

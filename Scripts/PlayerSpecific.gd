@@ -11,6 +11,7 @@ var streamPasHerbe = load("res://Sons/pasHerbe.wav")
 var audioOiseau
 var isHideInGrass = false
 
+
 #Inventaire
 var inventaire:Array setget ,getInventaire
 
@@ -28,7 +29,7 @@ func _ready():
 	changeSoundPas("PARQUET")
 		
 func _process(delta):
-	
+
 	if onMove and !playIsDone:
 		playerSound.play(1.0)
 		playIsDone = true

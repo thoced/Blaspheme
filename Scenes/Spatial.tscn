@@ -141,6 +141,7 @@ Sensitivity_X = 0.001
 Sensitivity_Y = 0.001
 Maximum_Sprint_Speed = 1.8
 Jump_Speed = 2.0
+staminaStep = 10.0
 
 [node name="AudioPas" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform( 1, 0, 4.47035e-08, 0, 0.553042, 0, -3.72529e-08, 0, 1, 0, 0, 0 )

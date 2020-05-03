@@ -103,13 +103,15 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_SHIFT) and (stamina > staminaStep):
 		Sprint_Speed = Maximum_Sprint_Speed
 		sprint = true
-		stamina -= staminaStep * delta
-		if stamina < 0.0:
-			stamina = 0.0
 		# modification du stamina
+		if onMove:
+			stamina -= staminaStep * delta
+			if stamina < 0.0:
+				stamina = 0.0
 	else:
 		Sprint_Speed = 0.0
 		sprint = false
+		# modification du stamina
 		stamina += staminaStepRecovery * delta
 		if stamina > staminaMax:
 			stamina = staminaMax

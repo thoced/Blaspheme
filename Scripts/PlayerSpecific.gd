@@ -30,11 +30,11 @@ func _ready():
 		
 func _process(delta):
 
-	if onMove and !playIsDone:
+	if PlayerVariables.onMove and !playIsDone:
 		playerSound.play(1.0)
 		playIsDone = true
 	
-	if !onMove:	
+	if !PlayerVariables.onMove:	
 		playerSound.stop()
 		playIsDone = false
 		

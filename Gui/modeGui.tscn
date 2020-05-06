@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Gui/stamina.gd" type="Script" id=1]
+[ext_resource path="res://Gui/panelInventory.gd" type="Script" id=2]
 
 [node name="modeGui" type="Control"]
 anchor_right = 1.0
@@ -64,3 +65,17 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 14.0
 text = "Stamina"
+
+[node name="panelInventory" type="Panel" parent="panelInfo"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -266.0
+margin_top = -32.0
+margin_bottom = 32.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -12,6 +12,8 @@ radius = 0.6
 script = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="branche" index="0"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="branche/StaticBody" index="0"]
 shape = SubResource( 1 )

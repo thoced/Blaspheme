@@ -137,6 +137,7 @@ omni_attenuation = 1.51572
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.993809, 0, 0.111105, 0, 1.5, 0, -0.111105, 0, -0.993809, 134.438, 5.1573, 51.5656 )
+collision_mask = 1
 script = ExtResource( 8 )
 Sensitivity_X = 0.001
 Sensitivity_Y = 0.001

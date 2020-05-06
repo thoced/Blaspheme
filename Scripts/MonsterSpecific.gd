@@ -172,7 +172,7 @@ func isPlayerVisible(distance):
 	
 	# si le joueur est caché dans l'herbe alors le monstre ne le voit pas à condition que la distance soit inférieur
 	# à distanceClosestPlayer
-	if player.isHideInGrass == true and (player.crounch or player.layer) and distance > distanceClosestPlayer:
+	if PlayerVariables.isHideInGrass == true and (PlayerVariables.crounch or PlayerVariables.layer) and distance > distanceClosestPlayer:
 		return false
 		
 	var ray_lenght = 1000

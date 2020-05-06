@@ -13,6 +13,9 @@ export var staminaMax = 100.0
 var stamina = staminaMax
 export var staminaStep = 5.0
 export var staminaStepRecovery = 2.0
+# IA support
+var isHideInGrass = false
+
 
 func _ready():
 	player = get_node("/root/Spatial/Player")

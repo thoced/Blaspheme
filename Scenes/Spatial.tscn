@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/dea/sea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/MonsterSpecific.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/EffectLight.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/PlayerSpecific.gd" type="Script" id=8]
 [ext_resource path="res://Assets/monster02/MonsterFull.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/branche/branche.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Gui/Dialogue/Dialogue.gd" type="Script" id=11]
 [ext_resource path="res://Assets/terrainLowPoly/terrainLowPoly.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/houseBlaspheme/houseBlaspheme.tscn" type="PackedScene" id=13]
@@ -1193,3 +1194,6 @@ transform = Transform( 0.00438076, 0, 0.99999, 0, 1, 0, -0.99999, 0, 0.00438076,
 
 [node name="casier" parent="victorian" instance=ExtResource( 20 )]
 transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 6.63122, 0.999956, 7.28376 )
+
+[node name="branche" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.224137, -0.81673, 0.531709, 0.93868, 0.0342481, -0.343085, 0.261998, 0.576003, 0.774324, 113.942, -3.92581, 47.9798 )

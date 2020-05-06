@@ -1,5 +1,8 @@
 extends Node
 
+var player
+var playerCamera
+
 # movement
 var onMove = false
 var crounch = false
@@ -11,3 +14,6 @@ var stamina = staminaMax
 export var staminaStep = 5.0
 export var staminaStepRecovery = 2.0
 
+func _ready():
+	player = get_node("/root/Spatial/Player")
+	playerCamera = get_node("/root/Spatial/Player/PivotCamera/NodeCamera/Camera")

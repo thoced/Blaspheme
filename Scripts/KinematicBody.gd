@@ -97,7 +97,6 @@ func _physics_process(delta):
 		PlayerVariables.onMove = true
 		
 	if Input.is_key_pressed(KEY_SHIFT) and (PlayerVariables.stamina > PlayerVariables.staminaStep):
-		InventoryVariable.addItemInventory("sac01")
 		Sprint_Speed = Maximum_Sprint_Speed
 		PlayerVariables.sprint = true
 		# modification du stamina
@@ -164,9 +163,7 @@ func _input(event):
 		if event.pressed:
 			if event.scancode == KEY_CONTROL:
 				PlayerVariables.crounch = !PlayerVariables.crounch
-				InventoryVariable.addItemInventory("branche")
 			if event.scancode == KEY_W:
-				InventoryVariable.addItemInventory("torche")
 				PlayerVariables.crounch = false
 				PlayerVariables.layer = !PlayerVariables.layer
 			if event.scancode == KEY_A:

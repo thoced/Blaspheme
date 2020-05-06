@@ -21,7 +21,7 @@ surfaces/0 = {
 [sub_resource type="SphereShape" id=2]
 
 [sub_resource type="SphereShape" id=3]
-radius = 0.6
+radius = 0.2
 
 [node name="branche" type="StaticBody"]
 script = ExtResource( 2 )

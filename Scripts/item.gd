@@ -3,6 +3,14 @@ extends Spatial
 export var name_item = "branche"
 
 var isPlayer = false
+var mat = null
+
+func _ready():
+	
+	for child in get_children():
+		if child is MeshInstance:
+			mat = child.mesh.surface_get_material(0)
+
 
 func _on_Area_body_entered(body):
 	if body == PlayerVariables.player:
@@ -23,3 +31,10 @@ func _input(event):
 					get_tree().queue_delete(self)
 			
 
+func _process(delta):
+	if isPlayer and mat != null:
+		if PlayerVariables.player.getPick()["collider"] == self:
+			mat.params_blend_mode = SpatialMaterial.BLEND_MODE_ADD
+		else:
+			mat.params_blend_mode = SpatialMaterial.BLEND_MODE_MIX
+			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/dea/sea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/MonsterSpecific.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/casier/casier.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/sapin/tree01.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/sapin/tree02.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/torche/torche.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scripts/Script_control_monster.gd" type="Script" id=36]
 
 [sub_resource type="NavigationMesh" id=1]
@@ -168,6 +169,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.001, 0 )
 
 [node name="campement" parent="terrainLowPoly" instance=ExtResource( 15 )]
 transform = Transform( 0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573576, 123.449, -2.29922, 39.4833 )
+
+[node name="torche" parent="terrainLowPoly/campement" instance=ExtResource( 23 )]
+transform = Transform( 0.711178, 0.569285, -0.412481, -0.569285, 0.122094, -0.813024, -0.412481, 0.813024, 0.410916, 0.258499, -0.73845, 0.2621 )
 
 [node name="houseBlaspheme" parent="." groups=[
 "navmesh",

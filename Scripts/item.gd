@@ -23,7 +23,7 @@ func _on_Area_body_exited(body):
 func _input(event):
 	if isPlayer:
 		if event is InputEventKey:
-			if event.scancode == KEY_U:
+			if event.scancode == KEY_R:
 				if PlayerVariables.player.getPick()["collider"] == self:
 					# ajout de l'item dasn l'inventaire
 					InventoryVariable.addItemInventory(name_item)

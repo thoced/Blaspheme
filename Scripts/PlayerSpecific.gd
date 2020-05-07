@@ -11,10 +11,6 @@ var streamPasHerbe = load("res://Sons/pasHerbe.wav")
 var audioOiseau
 
 
-
-#Inventaire
-var inventaire:Array setget ,getInventaire
-
 func _ready():
 	playerSound = $AudioPas
 	playerSound.stream = streamPasHerbe
@@ -25,7 +21,6 @@ func _ready():
 	playerSound.connect("finished",self,"finish_sound")
 	audioOiseau = get_node("/root/Spatial/AudioOiseau")
 	
-	inventaire.append("KEYGOLD")
 	changeSoundPas("PARQUET")
 		
 func _process(delta):
@@ -74,8 +69,10 @@ func changeSoundPas(nameSound):
 func finish_sound():
 	playIsDone = false
 	
-func getInventaire():
-	return inventaire
+func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		if event.scancode == KEY_L and InventoryVariable.inventory.has("torche"):
+			$PivotCamera/NodeCamera/Camera/SpotLight.visible = !$PivotCamera/NodeCamera/Camera/SpotLight.visible
 	
 func getPick():
 	var ray_lenght = 1000

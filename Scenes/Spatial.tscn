@@ -167,7 +167,7 @@ environment = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.001, 0 )
 
 [node name="campement" parent="terrainLowPoly" instance=ExtResource( 15 )]
-transform = Transform( 0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573576, 123.449, -2.29922, 39.4833 )
+transform = Transform( 0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573576, 123.446, -2.35002, 39.5154 )
 
 [node name="torche" parent="terrainLowPoly/campement" instance=ExtResource( 23 )]
 transform = Transform( 0.711178, 0.569285, -0.412481, -0.569285, 0.122094, -0.813024, -0.412481, 0.813024, 0.410916, 0.258499, -0.73845, 0.2621 )
@@ -1201,3 +1201,12 @@ transform = Transform( -1, 0, -3.25963e-07, 0, 1, 0, 3.25963e-07, 0, -1, 6.63122
 
 [node name="branche" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.224137, -0.81673, 0.531709, 0.93868, 0.0342481, -0.343085, 0.261998, 0.576003, 0.774324, 113.942, -3.92581, 47.9798 )
+name_item = "branche01"
+
+[node name="branche2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.224137, -0.81673, 0.531709, 0.93868, 0.0342481, -0.343085, 0.261998, 0.576003, 0.774324, 113.942, -3.60928, 45.1992 )
+name_item = "branche02"
+
+[node name="branche3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.224137, -0.81673, 0.531709, 0.93868, 0.0342481, -0.343085, 0.261998, 0.576003, 0.774324, 113.942, -3.28098, 42.7883 )
+name_item = "branche03"

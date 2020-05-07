@@ -21,7 +21,9 @@ func _process(delta):
 			match item:
 				"sac01": text = textSac
 				
-				"branche": text = textBranche
+				"branche01": text = textBranche
+				"branche02": text = textBranche
+				"branche03": text = textBranche
 				
 				"torche": text = textTorche
 				

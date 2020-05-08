@@ -8,6 +8,7 @@ data = PoolVector3Array( 194.729, -2.1906, -69.1819, 194.065, -2.4374, -70.3966,
 [node name="terrainLowPoly" instance=ExtResource( 1 )]
 
 [node name="StaticBody" type="StaticBody" parent="Plane001" index="0"]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Plane001/StaticBody" index="0"]
 shape = SubResource( 1 )

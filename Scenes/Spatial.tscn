@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/dea/sea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/MonsterSpecific.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/sapin/tree01.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Assets/sapin/tree02.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/torche/torche.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/rocher/rocher.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scripts/Script_control_monster.gd" type="Script" id=36]
 
 [sub_resource type="NavigationMesh" id=1]
@@ -1211,3 +1212,6 @@ name_item = "branche02"
 [node name="branche3" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.224137, -0.81673, 0.531709, 0.93868, 0.0342481, -0.343085, 0.261998, 0.576003, 0.774324, 113.942, -3.28098, 42.7883 )
 name_item = "branche03"
+
+[node name="rocher" parent="." instance=ExtResource( 24 )]
+transform = Transform( 0.996022, 0, -0.0891029, 0, 1, 0, 0.0891029, 0, 0.996022, 117.204, -8.2466, 66.7387 )

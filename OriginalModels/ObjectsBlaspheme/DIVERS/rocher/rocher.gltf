@@ -1,0 +1,154 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.0.5",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "rocher",
+            "rotation" : [
+                0,
+                -0.2237050086259842,
+                0,
+                0.974656879901886
+            ],
+            "scale" : [
+                1,
+                1,
+                2.8999998569488525
+            ],
+            "translation" : [
+                -2.143364429473877,
+                0,
+                1.130565881729126
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "metallicRoughnessTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "rocher_albdedo",
+            "uri" : "rocher_albdedo.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "rocher_roughness",
+            "uri" : "rocher_roughness.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 2128,
+            "max" : [
+                1.540342926979065,
+                4.688464641571045,
+                1.5861914157867432
+            ],
+            "min" : [
+                -7.517058372497559,
+                -1.0333340167999268,
+                -1.7276487350463867
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 2128,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 2128,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 3192,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 25536,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 25536,
+            "byteOffset" : 25536
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 17024,
+            "byteOffset" : 51072
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6384,
+            "byteOffset" : 68096
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 74480,
+            "uri" : "rocher.bin"
+        }
+    ]
+}

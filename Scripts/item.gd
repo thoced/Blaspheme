@@ -6,7 +6,6 @@ var isPlayer = false
 var mat = null
 
 func _ready():
-	
 	for child in get_children():
 		if child is MeshInstance:
 			mat = child.mesh.surface_get_material(0)
@@ -32,9 +31,5 @@ func _input(event):
 			
 
 func _process(delta):
-	if isPlayer and mat != null:
-		if PlayerVariables.player.getPick()["collider"] == self:
-			mat.params_blend_mode = SpatialMaterial.BLEND_MODE_ADD
-		else:
-			mat.params_blend_mode = SpatialMaterial.BLEND_MODE_MIX
+	pass
 			

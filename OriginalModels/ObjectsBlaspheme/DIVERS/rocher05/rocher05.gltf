@@ -1,0 +1,155 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.0.5",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.003",
+            "translation" : [
+                2.449075698852539,
+                -0.013776466250419617,
+                -3.5196917057037354
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "metallicRoughnessTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.005",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_RockBase5_2x2_1K_normal",
+            "uri" : "TexturesCom_RockBase5_2x2_1K_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_RockBase5_2x2_1K_albedo",
+            "uri" : "TexturesCom_RockBase5_2x2_1K_albedo.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "TexturesCom_RockBase5_2x2_1K_roughness",
+            "uri" : "TexturesCom_RockBase5_2x2_1K_roughness.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 731,
+            "max" : [
+                6.110832691192627,
+                4.3849968910217285,
+                8.29394817352295
+            ],
+            "min" : [
+                -5.946324825286865,
+                -4.20336389541626,
+                -7.285642623901367
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 731,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 731,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2490,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 8772,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8772,
+            "byteOffset" : 8772
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5848,
+            "byteOffset" : 17544
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4980,
+            "byteOffset" : 23392
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 28372,
+            "uri" : "rocher05.bin"
+        }
+    ]
+}

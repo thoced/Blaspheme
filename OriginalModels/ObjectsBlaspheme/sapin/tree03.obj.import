@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree03.obj-8107864310b03acada53d3ebd4a010f5.mesh"
+
+[deps]
+
+files=[ "res://.import/tree03.obj-8107864310b03acada53d3ebd4a010f5.mesh" ]
+
+source_file="res://OriginalModels/ObjectsBlaspheme/sapin/tree03.obj"
+dest_files=[ "res://.import/tree03.obj-8107864310b03acada53d3ebd4a010f5.mesh", "res://.import/tree03.obj-8107864310b03acada53d3ebd4a010f5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

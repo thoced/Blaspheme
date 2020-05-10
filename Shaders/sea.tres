@@ -7,51 +7,51 @@
 texture = ExtResource( 1 )
 texture_type = 1
 
-[sub_resource type="VisualShaderNodeTexture" id=18]
+[sub_resource type="VisualShaderNodeTexture" id=2]
 texture = ExtResource( 2 )
 
-[sub_resource type="VisualShaderNodeScalarOp" id=2]
-
 [sub_resource type="VisualShaderNodeScalarOp" id=3]
-default_input_values = [ 0, 0.0, 1, 0.75 ]
-operator = 2
 
 [sub_resource type="VisualShaderNodeScalarOp" id=4]
-
-[sub_resource type="VisualShaderNodeInput" id=5]
-input_name = "uv"
-
-[sub_resource type="VisualShaderNodeScalarOp" id=6]
-operator = 1
-
-[sub_resource type="VisualShaderNodeVectorDecompose" id=7]
-
-[sub_resource type="VisualShaderNodeVectorCompose" id=8]
-
-[sub_resource type="VisualShaderNodeScalarOp" id=9]
 default_input_values = [ 0, 0.0, 1, 0.75 ]
 operator = 2
 
+[sub_resource type="VisualShaderNodeScalarOp" id=5]
+
+[sub_resource type="VisualShaderNodeInput" id=6]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeScalarOp" id=7]
+operator = 1
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=8]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id=9]
+
 [sub_resource type="VisualShaderNodeScalarOp" id=10]
+default_input_values = [ 0, 0.0, 1, 0.75 ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarOp" id=11]
 default_input_values = [ 0, 0.0, 1, 0.01 ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeInput" id=11]
+[sub_resource type="VisualShaderNodeInput" id=12]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=12]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=13]
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=13]
+[sub_resource type="VisualShaderNodeVectorCompose" id=14]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=14]
+[sub_resource type="VisualShaderNodeScalarOp" id=15]
 
-[sub_resource type="VisualShaderNodeScalarFunc" id=15]
+[sub_resource type="VisualShaderNodeScalarFunc" id=16]
 function = 0
 
-[sub_resource type="VisualShaderNodeInput" id=16]
+[sub_resource type="VisualShaderNodeInput" id=17]
 input_name = "time"
 
-[sub_resource type="VisualShader" id=17]
+[sub_resource type="VisualShader" id=18]
 code = "shader_type spatial;
 uniform sampler2D tex_frg_2 : hint_albedo;
 uniform sampler2D tex_frg_3;
@@ -139,43 +139,43 @@ void light() {
 "
 graph_offset = Vector2( 274.934, 110.586 )
 nodes/vertex/0/position = Vector2( 1560, 20 )
-nodes/vertex/2/node = SubResource( 11 )
+nodes/vertex/2/node = SubResource( 12 )
 nodes/vertex/2/position = Vector2( 20, 80 )
-nodes/vertex/5/node = SubResource( 12 )
+nodes/vertex/5/node = SubResource( 13 )
 nodes/vertex/5/position = Vector2( 160, 160 )
-nodes/vertex/6/node = SubResource( 13 )
+nodes/vertex/6/node = SubResource( 14 )
 nodes/vertex/6/position = Vector2( 740, 180 )
-nodes/vertex/7/node = SubResource( 14 )
+nodes/vertex/7/node = SubResource( 15 )
 nodes/vertex/7/position = Vector2( 540, 40 )
-nodes/vertex/8/node = SubResource( 15 )
+nodes/vertex/8/node = SubResource( 16 )
 nodes/vertex/8/position = Vector2( 400, 340 )
-nodes/vertex/9/node = SubResource( 16 )
+nodes/vertex/9/node = SubResource( 17 )
 nodes/vertex/9/position = Vector2( 140, 560 )
-nodes/vertex/10/node = SubResource( 2 )
+nodes/vertex/10/node = SubResource( 3 )
 nodes/vertex/10/position = Vector2( 220, 380 )
-nodes/vertex/11/node = SubResource( 3 )
+nodes/vertex/11/node = SubResource( 4 )
 nodes/vertex/11/position = Vector2( 620, 300 )
-nodes/vertex/12/node = SubResource( 4 )
+nodes/vertex/12/node = SubResource( 5 )
 nodes/vertex/12/position = Vector2( 580, 460 )
-nodes/vertex/13/node = SubResource( 5 )
+nodes/vertex/13/node = SubResource( 6 )
 nodes/vertex/13/position = Vector2( 820, 380 )
-nodes/vertex/14/node = SubResource( 6 )
+nodes/vertex/14/node = SubResource( 7 )
 nodes/vertex/14/position = Vector2( 1260, 420 )
-nodes/vertex/15/node = SubResource( 7 )
+nodes/vertex/15/node = SubResource( 8 )
 nodes/vertex/15/position = Vector2( 980, 300 )
-nodes/vertex/16/node = SubResource( 8 )
+nodes/vertex/16/node = SubResource( 9 )
 nodes/vertex/16/position = Vector2( 1320, 180 )
-nodes/vertex/17/node = SubResource( 9 )
+nodes/vertex/17/node = SubResource( 10 )
 nodes/vertex/17/position = Vector2( 1480, 300 )
-nodes/vertex/18/node = SubResource( 10 )
+nodes/vertex/18/node = SubResource( 11 )
 nodes/vertex/18/position = Vector2( 980, 460 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 5, 0, 5, 1, 7, 0, 5, 2, 6, 2, 6, 0, 0, 0, 7, 0, 6, 1, 9, 0, 10, 0, 10, 0, 8, 0, 5, 0, 10, 1, 8, 0, 11, 0, 11, 0, 7, 1, 11, 0, 12, 1, 5, 0, 12, 0, 12, 0, 6, 0, 13, 0, 15, 0, 15, 0, 14, 0, 14, 0, 16, 0, 16, 0, 0, 4, 15, 1, 16, 1, 9, 0, 18, 0, 18, 0, 14, 1 )
 nodes/fragment/0/position = Vector2( 960, 40 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( 320, 120 )
-nodes/fragment/3/node = SubResource( 18 )
+nodes/fragment/3/node = SubResource( 2 )
 nodes/fragment/3/position = Vector2( 540, 280 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 3, 0, 0, 3, 3, 0, 0, 7 )
 
 [resource]
-shader = SubResource( 17 )
+shader = SubResource( 18 )

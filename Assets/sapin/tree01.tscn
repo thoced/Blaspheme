@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://OriginalModels/ObjectsBlaspheme/sapin/tree01.gltf" type="PackedScene" id=1]
+[ext_resource path="res://OriginalModels/ObjectsBlaspheme/sapin/tree03_mesh.tres" type="ArrayMesh" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.3
@@ -11,8 +12,11 @@ height = 4.0
 [node name="tree" parent="." index="0" groups=[
 "navmesh",
 ]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="tree" index="0"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="tree/StaticBody" index="0"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, -3.23927e-07, -1.98825 )
